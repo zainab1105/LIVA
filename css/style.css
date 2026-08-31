@@ -278,7 +278,7 @@ a {
 
     color: var(--muted);
 
-    font-size: 8px;
+    font-size: 14px;
 
     font-weight: 700;
 }
@@ -357,7 +357,7 @@ a {
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    font-size: 11px;
+    font-size: 15px;
 }
 
 
@@ -366,14 +366,14 @@ a {
 
     color: var(--muted);
 
-    font-size: 8px;
+    font-size: 14px;
 }
 
 
 .search-results b {
     color: var(--danger);
 
-    font-size: 12px;
+    font-size: 19px;
 }
 
 
@@ -459,7 +459,7 @@ a {
 
     color: var(--green);
 
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 800;
 }
 
@@ -471,14 +471,14 @@ a {
 
 
 .user-details strong {
-    font-size: 9px;
+    font-size: 17px;
 }
 
 
 .user-details span {
     color: var(--muted);
 
-    font-size: 7px;
+    font-size: 13px;
 }
 
 
@@ -707,14 +707,14 @@ h3 {
 
 
 .system-state strong {
-    font-size: 9px;
+    font-size: 15px;
 }
 
 
 .system-state span:not(.state-dot) {
     color: var(--muted);
 
-    font-size: 8px;
+    font-size: 13px;
 }
 
 
@@ -769,7 +769,7 @@ h3 {
 
 
 .situation-item:first-child {
-    padding-left: 0;
+    padding-left: 22;
 }
 
 
@@ -971,22 +971,32 @@ h3 {
 
 .india-map-placeholder {
     position: absolute;
-
     inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
 }
 
-.india-map-placeholder svg {
+
+.india-map-image {
     width: 100%;
     height: 100%;
 
-    opacity: 0.85;
+    object-fit: contain;
+    object-position: center;
+
+    display: block;
 }
 
-.india-map-placeholder svg path {
-    fill: #d5dfd9;
-    stroke: #6f837a;
-    stroke-width: 1.5;
-}   
+#riskSpots {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+}
 
 .map-message {
     position: absolute;
@@ -1041,6 +1051,11 @@ h3 {
     font-size: 9px;
 }
 
+#dashboardMap,
+#indiaMap {
+    width: 100% !important;
+    height: 100% !important;
+}
 
 /* ============================================================
    MAP LEGEND
@@ -1081,7 +1096,7 @@ h3 {
 
     color: var(--muted);
 
-    font-size: 8px;
+    font-size: 13px;
 }
 
 
@@ -1114,6 +1129,77 @@ h3 {
     background: var(--danger);
 }
 
+/* ============================================================
+   MAP RISK SPOTS
+   ============================================================ */
+
+.risk-spot {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    border: 3px solid white;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
+    z-index: 20;
+
+    transform: translate(-50%, -50%);
+}
+
+
+/* Risk levels */
+
+.risk-spot.low {
+    background: var(--green);
+}
+
+.risk-spot.medium {
+    background: var(--gold);
+}
+
+.risk-spot.high {
+    background: var(--warning);
+}
+
+.risk-spot.critical {
+    background: var(--danger);
+}
+
+
+/* Locations */
+/* DELHI */
+.spot-delhi {
+    top: 35%;
+    left: 43%;
+}
+
+/* LUCKNOW */
+.spot-lucknow {
+    top: 39%;
+    left: 50%;
+}
+
+/* MUMBAI */
+.spot-mumbai {
+    top: 57%;
+    left: 28%;
+}
+
+/* PUNE */
+.spot-pune {
+    top: 61%;
+    left: 31%;
+}
+
+/* BENGALURU */
+.spot-bengaluru {
+    top: 76%;
+    left: 39%;
+}
 
 /* ============================================================
    INTELLIGENCE RAIL
@@ -2015,7 +2101,7 @@ h3 {
 
     z-index: 700;
 
-    width: min(500px, 94vw);
+    width: min(727px, 94vw);
 
     overflow-y: auto;
 
@@ -2078,7 +2164,7 @@ body.modal-open {
 
     color: var(--muted);
 
-    font-size: 8px;
+    font-size: 14px;
 }
 
 
@@ -4753,7 +4839,7 @@ body {
 
 .section-heading p,
 .attention-header p {
-    font-size: 12px;
+    font-size: 19px;
 }
 
 /* ---------- LANDSCAPE ---------- */
@@ -5040,7 +5126,7 @@ body {
 }
 
 .footer-status {
-    font-size: 9px;
+    font-size: 18px;
 }
 
 .footer-actions button {
@@ -6274,7 +6360,7 @@ button,
 }
 
 .workspace small {
-    font-size: 13px !important;
+    font-size: 15px !important;
 }
 
 
@@ -6293,20 +6379,20 @@ button,
 /* PROJECT / LIST TEXT */
 .attention-main strong,
 .action-main strong {
-    font-size: 17px !important;
+    font-size: 22px !important;
 }
 
 .attention-main span,
 .action-main > span {
-    font-size: 14px !important;
+    font-size: 15px !important;
 }
 
 .attention-driver strong {
-    font-size: 13px !important;
+    font-size: 16px !important;
 }
 
 .attention-driver span {
-    font-size: 16px !important;
+    font-size: 17px !important;
 }
 
 .attention-risk strong {
@@ -6458,7 +6544,7 @@ button,
 
     align-items: baseline;
 
-    gap: 10px;
+    gap: 91px;
 
     padding: 16px;
 
@@ -6634,29 +6720,17 @@ button,
 /* IMPORTANT LABEL */
 
 .attention-item.priority-risk::before {
-
     content: "⚠ IMMEDIATE ATTENTION";
-
     position: absolute;
-
-    top: -12px;
-
-    left: 70px;
-
+    top: -18px;
+    left: 25px;
     padding: 4px 10px;
-
     background: var(--danger);
-
     color: white;
-
     border-radius: 20px;
-
-    font-size: 8px;
-
+    font-size: 14px;
     font-weight: 800;
-
     letter-spacing: 1px;
-
 }
 
 /* =========================================================
@@ -6947,7 +7021,7 @@ button,
 .prediction-header .section-index {
     color: var(--gold);
 
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 800;
 
     letter-spacing: 2px;

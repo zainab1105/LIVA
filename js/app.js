@@ -191,57 +191,39 @@ document.addEventListener("DOMContentLoaded", () => {
        PROJECT DRAWER
        ======================================================== */
 
-    function openProjectDrawer(
-        projectId
-    ) {
+    function openProjectDrawer(projectId) {
 
         const project =
             typeof projectId === "object"
                 ? projectId
                 : getProject(projectId);
 
-
         if (!project) {
             return;
         }
 
+        selectedProject = project;
 
-        selectedProject =
-            project;
+        renderProjectDrawer(project);
 
+        projectDrawer?.classList.add("open");
 
-        renderProjectDrawer(
-            project
-        );
+        projectDrawerOverlay?.classList.add("open");
 
-
-        projectDrawer?.classList.add(
-            "open"
-        );
-
-
-        projectDrawerOverlay?.classList.add(
-            "open"
-        );
-
-
-        document.body.classList.add(
-            "drawer-open"
-        );
-
+        document.body.classList.add("drawer-open");
 
         document.dispatchEvent(
-            new CustomEvent(
-                "landtrack:projectselected",
-                {
-                    detail: {
-                        project
-                    }
-                }
-            )
+            new CustomEvent("landtrack:projectselected", {
+                detail: { project }
+            })
         );
-
     }
+
+    window.LandTrackApp = window.LandTrackApp || {};
+
+    window.LandTrackApp.openProjectDrawer = openProjectDrawer;
+    
+    window.openProjectDrawer = openProjectDrawer;
 
 
     function closeProjectDrawer() {

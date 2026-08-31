@@ -609,6 +609,19 @@ function updateFilterVisual(
    11. SUMMARY
    ============================================================ */
 
+function setDetail(id, value) {
+    const element = document.getElementById(id);
+
+    if (element) {
+        element.textContent = value ?? "Not available";
+    }
+}
+
+
+function renderProjectSummary(project) {
+    // your existing code
+}
+
 function renderProjectSummary() {
 
     const total =
@@ -636,25 +649,25 @@ function renderProjectSummary() {
         ).length;
 
 
-    setText(
+    setDetail(
         "totalProjects",
         total
     );
 
 
-    setText(
+    setDetail(
         "highRiskProjects",
         highRisk
     );
 
 
-    setText(
+    setDetail(
         "atRiskProjects",
         atRisk
     );
 
 
-    setText(
+    setDetail(
         "onTrackProjects",
         onTrack
     );
@@ -953,16 +966,10 @@ function createProjectRow(
         );
 
 
-    if (viewButton) {
-        viewButton.addEventListener(
-            "click",
-            () => {
-                openProjectDrawer(projectId);
-            }
-        );
-    }
-    return row;
-}
+    viewButton.addEventListener("click", () => {
+    const projectId = viewButton.dataset.projectId;
+    openProjectDrawer(projectId);
+});
 
 
 /* ============================================================
@@ -1460,6 +1467,15 @@ function handleAddProject(
     populateNewFilterValues();
 
     applyFilters();
+
+    function setDetail(id, value) {
+        const element = document.getElementById(id);
+
+        if (element) {
+            element.textContent =
+                value ?? "Not available";
+        }
+    }
 
     renderProjectSummary();
 
@@ -2010,9 +2026,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 function setDetail(id, value) {
-
     const element =
         document.getElementById(id);
 
@@ -2020,5 +2034,4 @@ function setDetail(id, value) {
         element.textContent =
             value ?? "Not available";
     }
-
-}
+}}

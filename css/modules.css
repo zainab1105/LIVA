@@ -901,7 +901,7 @@
 
 .drawer-eyebrow {
     color: var(--gold);
-    font-size: 9px;
+    font-size: 19px;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
@@ -917,7 +917,7 @@
 
 .drawer-location {
     color: var(--muted);
-    font-size: 12px;
+    font-size: 18px;
 }
 
 .drawer-risk {
@@ -936,7 +936,7 @@
 .drawer-risk span {
     display: block;
     color: var(--muted);
-    font-size: 8px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -967,7 +967,7 @@
 .drawer-section-title {
     margin-bottom: 13px;
     color: var(--gold);
-    font-size: 8px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 1.4px;
 }
@@ -987,14 +987,14 @@
 .drawer-status-list span {
     display: block;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 17px;
 }
 
 .drawer-data-grid strong,
 .drawer-status-list strong {
     display: block;
     margin-top: 2px;
-    font-size: 11px;
+    font-size: 16px;
 }
 
 .drawer-driver {
@@ -1008,12 +1008,12 @@
 }
 
 .drawer-driver span {
-    font-size: 10px;
+    font-size: 14.5px;
 }
 
 .drawer-driver strong {
     color: var(--green);
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .drawer-driver-track {
@@ -1082,14 +1082,14 @@
 
 .drawer-timeline-item strong {
     display: block;
-    font-size: 10px;
+    font-size: 16px;
 }
 
 .drawer-timeline-item small {
     display: block;
     margin-top: 2px;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .drawer-recommendation {
@@ -1101,7 +1101,7 @@
 
 .drawer-recommendation span {
     color: var(--gold);
-    font-size: 8px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -1109,7 +1109,7 @@
 .drawer-recommendation p {
     margin-top: 6px;
     color: var(--ink);
-    font-size: 11px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -1650,8 +1650,8 @@
 
 .map-overlay-title {
     position: absolute;
-    top: 25px;
-    left: 25px;
+    top: 11px;
+    left: 52px;
     z-index: 500;
     background: rgba(18, 49, 45, 0.92);
     padding: 10px 14px;
