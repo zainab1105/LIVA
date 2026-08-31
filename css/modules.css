@@ -1803,3 +1803,224 @@
         min-height: auto;
     }
 }   
+
+/* =========================================================
+   ACQUISITION JOURNEY – VISUAL PRIORITY
+   ========================================================= */
+
+.journey-section {
+    padding: 70px 40px;
+}
+
+
+.journey-track {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+
+    margin-top: 45px;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5e2;
+
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(20, 50, 45, 0.08);
+
+    overflow-x: auto;
+}
+
+
+/* ===============================
+   EACH STAGE
+   =============================== */
+
+.journey-stage {
+    position: relative;
+
+    min-width: 145px;
+
+    padding: 22px 18px;
+
+    text-align: center;
+
+    background: #f7f9f8;
+
+    border: 1px solid #e1e6e3;
+
+    border-radius: 16px;
+
+    transition: all 0.25s ease;
+}
+
+
+.journey-stage:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+/* STEP NUMBER */
+
+.journey-stage span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 16px;
+
+    border-radius: 50%;
+
+    background: #e8eeeb;
+
+    color: #28584f;
+
+    font-weight: 800;
+
+    font-size: 12px;
+}
+
+
+/* TITLE */
+
+.journey-stage strong {
+    display: block;
+
+    color: #24343a;
+
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+
+/* STATUS */
+
+.journey-stage small {
+    display: inline-block;
+
+    color: #6d7878;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* ===============================
+   COMPLETED 🟢
+   =============================== */
+
+.journey-stage.complete {
+    background: #f1f8f5;
+
+    border-color: #2f7669;
+}
+
+
+.journey-stage.complete span {
+    background: #2f7669;
+
+    color: #ffffff;
+}
+
+
+.journey-stage.complete small {
+    color: #2f7669;
+}
+
+
+/* ===============================
+   WARNING ⚠️
+   =============================== */
+
+.journey-stage.warning {
+    background: #fff8ec;
+
+    border: 2px solid #c8872b;
+
+    box-shadow: 0 10px 28px rgba(200, 135, 43, 0.18);
+
+    transform: translateY(-10px);
+}
+
+
+.journey-stage.warning span {
+    background: #c8872b;
+
+    color: white;
+}
+
+
+.journey-stage.warning small {
+    color: #a66a14;
+
+    font-weight: 800;
+}
+
+
+/* ===============================
+   DANGER 🔴
+   =============================== */
+
+.journey-stage.danger {
+    background: #fff3f2;
+
+    border: 2px solid #b94a48;
+
+    box-shadow: 0 14px 35px rgba(185, 74, 72, 0.25);
+
+    transform: translateY(-15px);
+}
+
+
+.journey-stage.danger span {
+    background: #b94a48;
+
+    color: white;
+}
+
+
+.journey-stage.danger small {
+    color: #b94a48;
+
+    font-weight: 800;
+}
+
+
+/* ===============================
+   CONNECTORS
+   =============================== */
+
+.journey-connector {
+    min-width: 35px;
+
+    height: 3px;
+
+    align-self: center;
+
+    background: #dce3df;
+}
+
+
+.journey-connector.complete {
+    background: #2f7669;
+}
+
+
+.journey-connector.warning {
+    background: #c8872b;
+}
+
+
+.journey-connector.danger {
+    background: #b94a48;
+}

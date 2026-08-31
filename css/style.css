@@ -570,32 +570,23 @@ a {
     font-weight: 800;
 }
 
-
 /* ============================================================
    WORKSPACE
    ============================================================ */
-
 .workspace {
     width: min(1480px, 100%);
-
     margin: 0 auto;
-
-    padding: 58px 42px 100px;
+    padding: 58px 42px;
 }
-
 
 .view {
     display: none;
-
-    animation:
-        viewIn 280ms ease both;
+    animation: viewIn 280ms ease both;
 }
-
 
 .view.active {
     display: block;
 }
-
 
 @keyframes viewIn {
 
@@ -1593,7 +1584,6 @@ h3 {
 
 .attention-arrow {
     color: var(--muted);
-
     font-size: 15px;
 }
 
@@ -1643,32 +1633,18 @@ h3 {
    ============================================================ */
 
 .bottom-command-bar {
-    position: fixed;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
+    position: relative;
+    width: 100%;
     z-index: 90;
-
     min-height: 61px;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 0 42px;
-
-    background:
-        rgba(255,255,255,0.96);
-
-    border-top:
-        1px solid var(--line);
-
-    backdrop-filter:
-        blur(12px);
+    background: rgba(255,255,255,0.96);
+    border-top: 1px solid var(--line);
+    backdrop-filter: blur(12px);
+    box-sizing: border-box;
 }
 
 
@@ -4220,7 +4196,6 @@ body.modal-open {
     background: #a27a32;
 }
 
-
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -6616,3 +6591,1226 @@ button,
 
     background: rgba(185, 74, 72, 0.22);
 }
+
+/* ============================================================
+   PRIORITY RISK – FIRST GLANCE VISIBILITY
+   ============================================================ */
+
+.attention-item.priority-risk {
+    position: relative;
+
+    background: #fff4f3;
+
+    border-left: 5px solid var(--danger);
+
+    transform: scale(1.015);
+
+    box-shadow:
+        0 12px 30px
+        rgba(185, 74, 72, 0.16);
+}
+
+
+.attention-item.priority-risk:hover {
+    transform:
+        scale(1.02)
+        translateX(6px);
+}
+
+
+/* BIGGER RISK NUMBER */
+
+.attention-item.priority-risk
+.attention-risk strong {
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    color: var(--danger);
+}
+
+
+/* IMPORTANT LABEL */
+
+.attention-item.priority-risk::before {
+
+    content: "⚠ IMMEDIATE ATTENTION";
+
+    position: absolute;
+
+    top: -12px;
+
+    left: 70px;
+
+    padding: 4px 10px;
+
+    background: var(--danger);
+
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+/* =========================================================
+   PROJECT WORKFLOW
+========================================================= */
+
+.workflow-section {
+    margin-top: 0px;
+    padding: 40px 55px 60px;
+}
+
+
+.workflow-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+
+.workflow-eyebrow {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+
+    color: #a77a32;
+}
+
+
+.workflow-heading h2 {
+    margin: 0 0 10px;
+
+    font-size: 32px;
+    line-height: 1.2;
+
+    color: #243238;
+}
+
+
+.workflow-heading p {
+    margin: 0;
+
+    max-width: 600px;
+
+    line-height: 1.6;
+
+    color: #667278;
+}
+
+/* =========================================================
+   WORKFLOW STEPS
+========================================================= */
+
+.workflow-steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 14px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   INDIVIDUAL STEP
+========================================================= */
+
+.workflow-step {
+    position: relative;
+
+    min-height: 170px;
+
+    padding: 22px 18px;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    border:
+        1px solid
+        rgba(31, 57, 55, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.workflow-step:hover {
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(47, 118, 105, 0.55);
+
+    background:
+        #f7fbfa;
+
+    box-shadow:
+        0 12px 30px
+        rgba(25, 55, 52, 0.10);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.workflow-number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background:
+        #f1f4f3;
+
+    border:
+        1px solid
+        rgba(31, 57, 55, 0.10);
+
+    color:
+        #52605f;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   ACTIVE FIRST STEP
+========================================================= */
+
+.workflow-step.active {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(47, 118, 105, 0.16),
+            rgba(47, 118, 105, 0.04)
+        );
+
+    border-color:
+        rgba(47, 118, 105, 0.50);
+
+}
+
+
+.workflow-step.active .workflow-number {
+
+    background:
+        #1f4f49;
+
+    border-color:
+        #1f4f49;
+
+    color:
+        white;
+
+    box-shadow:
+
+        0 8px 20px
+        rgba(31, 79, 73, 0.25);
+
+}
+
+
+/* =========================================================
+   STEP TEXT
+========================================================= */
+
+.workflow-step h3 {
+
+    margin:
+        0 0 8px;
+
+    font-size:
+        16px;
+
+    line-height:
+        1.3;
+
+    color:
+        #26343a;
+
+}
+
+
+.workflow-step p {
+
+    margin:
+        0;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+    color:
+        #6d787d;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .workflow-steps {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .workflow-heading {
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .workflow-steps {
+
+        grid-template-columns:
+            repeat(1, 1fr);
+
+    }
+
+}
+
+/* ============================================================
+   AI PREDICTION – VISUAL PRIORITY
+   ============================================================ */
+
+.prediction-page {
+    padding-bottom: 100px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.prediction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+
+.prediction-header > div:first-child {
+    display: flex;
+    gap: 22px;
+}
+
+
+.prediction-header .section-index {
+    color: var(--gold);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    padding-top: 8px;
+}
+
+
+.eyebrow {
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.prediction-header h1 {
+    max-width: 850px;
+
+    font-size: clamp(42px, 4vw, 68px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    margin: 0;
+}
+
+
+.prediction-description {
+    max-width: 650px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* MODEL ACTIVE */
+
+.prediction-status {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 16px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 30px;
+
+    color: var(--green);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+}
+
+
+.prediction-status-dot {
+    width: 8px;
+    height: 8px;
+
+    background: var(--green);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 6px rgba(47, 118, 105, 0.12);
+}
+
+
+/* ============================================================
+   PROJECT SELECTOR
+   ============================================================ */
+
+.prediction-selector {
+    margin-bottom: 28px;
+
+    padding: 22px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 16px;
+}
+
+
+.prediction-selector label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.prediction-selector select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--line);
+
+    border-radius: 10px;
+
+    color: var(--ink);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   HERO CARDS – FIRST THING USER SEES
+   ============================================================ */
+
+.prediction-hero {
+    display: grid;
+
+    grid-template-columns:
+        1.4fr
+        1fr
+        1fr;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+.prediction-score-card,
+.prediction-delay-card,
+.prediction-driver-card {
+    min-height: 260px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--line);
+
+    background: #ffffff;
+}
+
+
+/* MAIN RISK CARD */
+
+.prediction-score-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border: 2px solid var(--danger);
+
+    box-shadow:
+        0 18px 45px rgba(185, 74, 72, 0.16);
+}
+
+
+.prediction-score-heading {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.prediction-score-heading > span:first-child {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+#predictionRiskLabel {
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+}
+
+
+#predictionRiskLabel.critical {
+    background: var(--danger-soft);
+    color: var(--danger);
+}
+
+
+#predictionRiskLabel.high {
+    background: var(--warning-soft);
+    color: var(--warning);
+}
+
+
+#predictionRiskLabel.medium {
+    background: #f8f0df;
+    color: var(--gold);
+}
+
+
+#predictionRiskLabel.low {
+    background: #edf7f3;
+    color: var(--green);
+}
+
+
+/* BIG RISK NUMBER */
+
+.prediction-score {
+    display: flex;
+    align-items: flex-start;
+
+    margin: 25px 0;
+}
+
+
+.prediction-score strong {
+    font-size: clamp(70px, 7vw, 105px);
+
+    line-height: 0.8;
+
+    color: var(--danger);
+
+    letter-spacing: -5px;
+}
+
+
+.prediction-score > span {
+    margin-top: 8px;
+
+    color: var(--danger);
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+
+/* RISK BAR */
+
+.prediction-risk-bar {
+    width: 100%;
+    height: 10px;
+
+    overflow: hidden;
+
+    background: #eee;
+
+    border-radius: 20px;
+}
+
+
+#predictionRiskFill {
+    height: 100%;
+
+    width: 0;
+
+    border-radius: inherit;
+
+    transition: width 0.6s ease;
+}
+
+
+#predictionRiskFill.critical,
+#predictionRiskFill.high {
+    background: var(--danger);
+}
+
+
+#predictionRiskFill.medium {
+    background: var(--warning);
+}
+
+
+#predictionRiskFill.low {
+    background: var(--green);
+}
+
+
+.prediction-score-footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+.prediction-score-footer strong {
+    color: var(--ink);
+}
+
+
+/* ============================================================
+   DELAY CARD
+   ============================================================ */
+
+.prediction-delay-card > span,
+.prediction-driver-card > span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.prediction-delay-card > strong {
+    display: block;
+
+    margin-top: 30px;
+
+    color: var(--warning);
+
+    font-size: 62px;
+
+    line-height: 1;
+}
+
+
+.prediction-delay-card small {
+    color: var(--warning);
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.prediction-delay-card p,
+.prediction-driver-card p {
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   DRIVER CARD
+   ============================================================ */
+
+.prediction-driver-card {
+    border-left: 5px solid var(--gold);
+}
+
+
+.prediction-driver-card > strong {
+    display: block;
+
+    margin-top: 28px;
+
+    color: var(--ink);
+
+    font-size: 22px;
+
+    line-height: 1.25;
+}
+
+
+/* ============================================================
+   ANALYSIS PANELS
+   ============================================================ */
+
+.prediction-analysis {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+.prediction-panel {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+}
+
+
+.prediction-panel-heading {
+    margin-bottom: 28px;
+}
+
+
+.prediction-panel-heading span {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.prediction-panel-heading h2 {
+    margin-top: 10px;
+
+    font-size: 24px;
+
+    line-height: 1.2;
+}
+
+
+/* ============================================================
+   CONTRIBUTING FACTORS
+   ============================================================ */
+
+.prediction-factor {
+    margin-bottom: 22px;
+}
+
+
+.factor-top {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+
+.factor-top > div {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.factor-number {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.factor-top strong {
+    font-size: 13px;
+}
+
+
+.factor-top b {
+    color: var(--danger);
+
+    font-size: 13px;
+}
+
+
+.factor-track {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    background: #edf0ee;
+
+    border-radius: 20px;
+}
+
+
+.factor-track > div {
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--warning),
+            var(--danger)
+        );
+
+    border-radius: inherit;
+
+    transition: width 0.6s ease;
+}
+
+
+/* ============================================================
+   SIGNALS
+   ============================================================ */
+
+.prediction-signals {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.prediction-signal {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px;
+
+    background: var(--paper);
+
+    border: 1px solid var(--line);
+
+    border-radius: 12px;
+}
+
+
+.prediction-signal div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.prediction-signal span {
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+.prediction-signal strong {
+    font-size: 13px;
+}
+
+
+.prediction-signal b {
+    padding: 6px 10px;
+
+    background: #edf7f3;
+
+    border-radius: 20px;
+
+    color: var(--green);
+
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   AI INTERPRETATION
+   ============================================================ */
+
+.prediction-interpretation {
+    padding: 45px;
+
+    margin-bottom: 25px;
+
+    background: var(--ink);
+
+    border-radius: 22px;
+
+    color: white;
+}
+
+
+.interpretation-label {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.interpretation-label span {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    white-space: nowrap;
+}
+
+
+.interpretation-line {
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,0.2);
+}
+
+
+.interpretation-content h2 {
+    max-width: 950px;
+
+    font-size: clamp(25px, 3vw, 42px);
+
+    line-height: 1.25;
+
+    font-weight: 500;
+}
+
+
+.interpretation-content p {
+    margin-top: 18px;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* ============================================================
+   NEXT ACTION
+   ============================================================ */
+
+.prediction-next-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    padding: 35px;
+
+    background: #f3f7f5;
+
+    border: 1px solid var(--line);
+
+    border-radius: 20px;
+}
+
+
+.prediction-next-action > div > span {
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.prediction-next-action h2 {
+    margin-top: 10px;
+
+    font-size: 28px;
+}
+
+
+.prediction-next-action p {
+    max-width: 600px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.prediction-next-action button {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 17px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: var(--green);
+
+    color: white;
+
+    font: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: transform 0.2s ease;
+}
+
+
+.prediction-next-action button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ============================================================
+   DISCLAIMER
+   ============================================================ */
+
+.prediction-disclaimer {
+    display: flex;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    border-top: 1px solid var(--line);
+}
+
+
+.prediction-disclaimer strong {
+    color: var(--ink);
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 950px) {
+
+    .prediction-header,
+    .prediction-next-action {
+        flex-direction: column;
+    }
+
+    .prediction-hero,
+    .prediction-analysis {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .prediction-page {
+        padding-bottom: 60px;
+    }
+
+    .prediction-score-card,
+    .prediction-delay-card,
+    .prediction-driver-card,
+    .prediction-panel,
+    .prediction-interpretation,
+    .prediction-next-action {
+        padding: 22px;
+    }
+
+    .prediction-header h1 {
+        font-size: 40px;
+    }
+
+}
+
+/* =========================================================
+   FIX — PREVENT CONTENT FROM GOING BEHIND FIXED FOOTER
+========================================================= */
+
+.bottom-command-bar {
+    height: var(--bottom-bar-height);
+    min-height: var(--bottom-bar-height);
+}
+
+.view.active {
+    padding-bottom: 40px;
+}
+
+/* =========================================================
+   FINAL WORKSPACE + FIXED FOOTER SPACING
+========================================================= */
+
+:root {
+    --bottom-bar-height: 70px;
+}
+
+.workspace {
+    width: min(1600px, 100%);
+    margin: 0 auto;
+
+    padding:
+        42px
+        48px
+        calc(var(--bottom-bar-height) + 50px);
+}
+
+.bottom-command-bar {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: var(--bottom-bar-height);
+
+    z-index: 100;
+}
+
+    main {
+        padding-bottom: 90px;
+    }

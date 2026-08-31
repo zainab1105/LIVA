@@ -1561,7 +1561,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 type="button"
                                 class="attention-item ${getRiskClass(
                                     risk
-                                )}"
+                                )} ${risk >= 80 ? "priority-risk" : ""}"
                                 data-attention-project="${escapeAttribute(
                                     project.id
                                 )}"
