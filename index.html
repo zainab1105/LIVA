@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LIVA - Land Intelligence & Velocity Analytics.">
+
+    <title>
+        LIVA
+    </title>
+
+    <link rel="icon" href="data:,">
+
+    <!-- =====================================================
+         FONTS
+         ===================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- =====================================================
+         STYLES
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link
+        rel="stylesheet"
+        href="css/modules.css"
+    >
+
+    <link rel="stylesheet" href="css/projects.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-shell">
+
+
+    <!-- =====================================================
+         TOP IDENTITY BAR
+         ===================================================== -->
+
+    <header class="identity-bar">
+
+
+        <!-- BRAND -->
+
+        <div class="brand-block">
+
+            <div class="brand-mark">
+                LT
+            </div>
+
+            <div>
+
+                <div class="brand-name">
+                    LIVA</span>
+                </div>
+
+                <div class="brand-subtitle">
+                    Land Intelligence & Velocity Analytics
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GLOBAL SEARCH -->
+
+        <div class="global-search">
+
+            <span class="search-symbol">
+                ⌕
+            </span>
+
+            <input
+                type="search"
+                id="globalSearch"
+                placeholder="Search project, parcel, survey number..."
+                autocomplete="off"
+            >
+
+            <span class="search-shortcut">
+                Ctrl K
+            </span>
+
+        </div>
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-action"
+                id="alertsButton"
+            >
+
+                Alerts
+
+                <span
+                    class="alert-count"
+                    id="alertCount"
+                >
+                    5
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="header-action"
+                data-view-target="documents"
+            >
+                Documents
+            </button>
+
+
+            <div class="user-profile">
+
+                <div class="user-avatar">
+                    GO
+                </div>
+
+                <div class="user-details">
+
+                    <strong>
+                        Government Officer
+                    </strong>
+
+                    <span>
+                        Land Acquisition Cell
+                    </span>
+
+                </div>
+
+                <span class="user-arrow">
+                    ▾
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN MODE NAVIGATION
+         ===================================================== -->
+
+    <nav class="mode-navigation">
+
+
+        <button
+            type="button"
+            class="mode-item active"
+            data-view="overview"
+        >
+
+            <span class="mode-number">
+                01
+            </span>
+
+            Overview
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="gis"
+        >
+
+            <span class="mode-number">
+                02
+            </span>
+
+            Land Map
+
+        </button>
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="projects">
+
+            <span class="mode-number">03</span>
+            Projects
+
+        </button>
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="prediction"
+        >
+
+            <span class="mode-number">
+                04
+            </span>
+
+            AI Prediction
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="simulator"
+        >
+
+            <span class="mode-number">
+                05
+            </span>
+
+            Simulator
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="documents"
+        >
+
+            <span class="mode-number">
+                06
+            </span>
+
+            Documents
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="rr"
+        >
+
+            <span class="mode-number">
+                07
+            </span>
+
+            R&R
+
+        </button>
+
+
+        <button
+            type="button"
+            class="mode-item"
+            data-view="actions"
+        >
+
+            <span class="mode-number">
+                08
+            </span>
+
+            Action Centre
+
+        </button>
+
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MAIN WORKSPACE
+         ===================================================== -->
+
+    <main class="workspace">
+
+
+
+        <!-- =================================================
+             01 — OVERVIEW
+             ================================================= -->
+
+        <section
+            class="view active"
+            id="overviewView"
+        >
+
+
+            <div class="workspace-intro">
+
+                <div>
+
+                    <p class="eyebrow">
+                        NATIONAL LAND ACQUISITION MONITOR
+                    </p>
+
+                    <h1>
+                        See the land. See the delay. Act before it happens.
+                    </h1>
+
+                    <p class="intro-description">
+                        A unified intelligence workspace for
+                        monitoring land acquisition, identifying
+                        bottlenecks and helping administrators
+                        decide where intervention is needed first.
+                    </p>
+
+                </div>
+
+
+                <div class="system-state">
+
+                    <span class="state-dot"></span>
+
+                    <div>
+
+                        <strong>
+                            Demonstration environment
+                        </strong>
+
+                        <span>
+                            Data updated from prototype dataset
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SITUATION -->
+
+            <div class="situation-strip">
+
+
+                <div class="situation-item">
+
+                    <span>
+                        ACTIVE PROJECTS
+                    </span>
+
+                    <strong>
+                        06
+                    </strong>
+
+                </div>
+
+
+                <div class="situation-divider"></div>
+
+
+                <div class="situation-item">
+
+                    <span>
+                        LAND REQUIRED
+                    </span>
+
+                    <strong>
+                        1,104.5 Ha
+                    </strong>
+
+                </div>
+
+
+                <div class="situation-divider"></div>
+
+
+                <div class="situation-item">
+
+                    <span>
+                        LAND ACQUIRED
+                    </span>
+
+                    <strong>
+                        796.4 Ha
+                    </strong>
+
+                </div>
+
+
+                <div class="situation-divider"></div>
+
+
+                <div class="situation-item danger">
+
+                    <span>
+                        HIGH-RISK PROJECTS
+                    </span>
+
+                    <strong>
+                        03
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LANDSCAPE -->
+
+            <section class="landscape-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-index">
+                            01
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Acquisition landscape
+                            </h2>
+
+                            <p>
+                                Where attention is needed across
+                                the current project portfolio.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        data-view-target="gis"
+                    >
+
+                        Explore land map
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="landscape-workspace">
+
+
+                    <!-- MAP -->
+
+                    <div class="map-stage">
+
+                        <div class="map-overlay-title">
+
+                            <span>
+                                NATIONAL VIEW
+                            </span>
+
+                            <strong>
+                                Project risk landscape
+                            </strong>
+
+                        </div>
+
+
+                        <div class="india-map-placeholder">
+
+                            <div id="dashboardMap"></div>
+
+                            <div id="India-map"></div>
+
+
+                        </div>
+
+
+                        <div class="map-legend">
+
+                            <div>
+                                <i class="legend-low"></i>
+                                Low
+                            </div>
+
+                            <div>
+                                <i class="legend-medium"></i>
+                                Medium
+                            </div>
+
+                            <div>
+                                <i class="legend-high"></i>
+                                High
+                            </div>
+
+                            <div>
+                                <i class="legend-critical"></i>
+                                Critical
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- INTELLIGENCE -->
+
+                    <aside class="intelligence-rail">
+
+
+                        <div class="rail-heading">
+
+                            <span>
+                                PORTFOLIO SIGNAL
+                            </span>
+
+                            <span class="live-indicator">
+                                ● LIVE
+                            </span>
+
+                        </div>
+
+
+                        <div class="risk-reading">
+
+                            <span>
+                                Average delay risk
+                            </span>
+
+                            <strong id="portfolioRisk">
+                                —
+                            </strong>
+
+                            <small>
+                                across active projects
+                            </small>
+
+                        </div>
+
+
+                        <div class="rail-line"></div>
+
+
+                        <div class="priority-project">
+
+                            <span class="priority-label">
+                                PRIORITY PROJECT
+                            </span>
+
+                            <h3>
+                                NH-56 Expansion
+                            </h3>
+
+                            <p>
+                                Narmada, Gujarat
+                            </p>
+
+
+                            <div class="priority-risk">
+
+                                <strong>
+                                    87%
+                                </strong>
+
+                                <span>
+                                    delay risk
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                type="button"
+                                class="outline-button"
+                                id="investigateProjectButton"
+                                data-project-id="GJ-AHM-003"
+                            >
+
+                                Investigate project
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- JOURNEY -->
+
+            <section class="journey-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span class="section-index">
+                            02
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Acquisition journey
+                            </h2>
+
+                            <p>
+                                The typical path from notification
+                                to possession and rehabilitation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journey-track">
+
+
+                    <div class="journey-stage complete">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            Notification
+                        </strong>
+
+                        <small>
+                            Initiated
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector complete"></div>
+
+
+                    <div class="journey-stage complete">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            Survey
+                        </strong>
+
+                        <small>
+                            Verified
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector complete"></div>
+
+
+                    <div class="journey-stage complete">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            Valuation
+                        </strong>
+
+                        <small>
+                            Assessed
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector warning"></div>
+
+
+                    <div class="journey-stage warning">
+
+                        <span>
+                            04
+                        </span>
+
+                        <strong>
+                            Award
+                        </strong>
+
+                        <small>
+                            Bottleneck
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector danger"></div>
+
+
+                    <div class="journey-stage danger">
+
+                        <span>
+                            05
+                        </span>
+
+                        <strong>
+                            Compensation
+                        </strong>
+
+                        <small>
+                            Attention
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector"></div>
+
+
+                    <div class="journey-stage">
+
+                        <span>
+                            06
+                        </span>
+
+                        <strong>
+                            Possession
+                        </strong>
+
+                        <small>
+                            Upcoming
+                        </small>
+
+                    </div>
+
+
+                    <div class="journey-connector"></div>
+
+
+                    <div class="journey-stage">
+
+                        <span>
+                            07
+                        </span>
+
+                        <strong>
+                            R&R
+                        </strong>
+
+                        <small>
+                            Upcoming
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ATTENTION -->
+
+            <section class="attention-section">
+
+
+                <div class="attention-header">
+
+                    <div>
+
+                        <span class="section-index">
+                            03
+                        </span>
+
+                        <div>
+
+                            <h2>
+                                Needs attention
+                            </h2>
+
+                            <p>
+                                Projects where early intervention
+                                may prevent further delay.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="text-button"
+                        data-view-target="actions"
+                    >
+
+                        Open action centre
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="attention-list"
+                    id="attentionList"
+                >
+
+                    <!-- Generated by app.js -->
+
+                </div>
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             02 — GIS
+             ================================================= -->
+
+        <section class="view" id="gisView">
+
+    <div class="gis-page">
+
+        <div class="gis-header">
+            <div>
+                <span class="page-eyebrow">
+                    02 · GEOSPATIAL INTELLIGENCE
+                </span>
+
+                <h1>Land Map</h1>
+
+                <p>
+                    India-wide project and parcel intelligence,
+                    with live acquisition risk signals.
+                </p>
+            </div>
+
+            <div class="gis-filters">
+                <button class="gis-filter active">All Projects</button>
+                <button class="gis-filter">High Risk</button>
+                <button class="gis-filter">Acquisition</button>
+            </div>
+        </div>
+
+        <div class="gis-layout">
+
+            <div class="map-card">
+
+                <div class="map-overlay-title">
+                    <span>NATIONAL VIEW</span>
+                    <strong>Project risk landscape</strong>
+                </div>
+
+                <div id="indiaMap"></div>
+
+                <div class="map-legend">
+                    <span><i class="low"></i> Low</span>
+                    <span><i class="medium"></i> Medium</span>
+                    <span><i class="high"></i> High</span>
+                    <span><i class="critical"></i> Critical</span>
+                </div>
+
+            </div>
+
+
+            <aside class="map-side-panel">
+
+                <div class="panel-label">
+                    PORTFOLIO SIGNAL
+                    <span>● LIVE</span>
+                </div>
+
+                <p class="risk-label">Average delay risk</p>
+
+                <div class="risk-number">66%</div>
+
+                <p class="risk-subtitle">
+                    across active projects
+                </p>
+
+                <hr>
+
+                <div class="priority-label">
+                    PRIORITY PROJECT
+                </div>
+
+                <h2>NH-56 Expansion</h2>
+
+                <p class="priority-location">
+                    Narmada, Gujarat
+                </p>
+
+                <div class="delay-box">
+                    <strong>87%</strong>
+                    <span>delay risk</span>
+                </div>
+
+                <button
+                    class="investigate-button"
+                    data-view-target="projects"
+                >
+                    Investigate project
+                    <span>→</span>
+                </button>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section> 
+
+
+
+        <!-- =================================================
+             03 — PROJECTS
+             ================================================= -->
+
+        <section class="view" id="projectsView">
+
+    <!-- PROJECT HERO -->
+    <div class="projects-page">
+
+        <div class="projects-header">
+
+            <div>
+                <span class="eyebrow">
+                    03 · PROJECT PORTFOLIO
+                </span>
+
+                <h1>Projects</h1>
+
+                <p>
+                    Monitor active land acquisition projects, identify delay
+                    risks and prioritize projects requiring intervention.
+                </p>
+            </div>
+
+            <button class="add-project-btn">
+                + Add New Project
+            </button>
+
+        </div>
+
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="project-summary-grid">
+
+            <div class="project-summary-card">
+
+                <span class="summary-label">
+                    Total Projects
+                </span>
+
+                <strong class="summary-value" id="totalProjects">
+                    5
+                </strong>
+
+                <span class="summary-meta">
+                    Projects in portfolio
+                </span>
+
+            </div>
+
+
+            <div class="project-summary-card">
+
+                <span class="summary-label">
+                    High Risk
+                </span>
+
+                <strong class="summary-value danger" id="highRiskProjects">
+                    3
+                </strong>
+
+                <span class="summary-meta">
+                    Require intervention
+                </span>
+
+            </div>
+
+
+            <div class="project-summary-card">
+
+                <span class="summary-label">
+                    At Risk
+                </span>
+
+                <strong class="summary-value warning" id="atRiskProjects">
+                    1
+                </strong>
+
+                <span class="summary-meta">
+                    Under monitoring
+                </span>
+
+            </div>
+
+
+            <div class="project-summary-card">
+
+                <span class="summary-label">
+                    On Track
+                </span>
+
+                <strong class="summary-value success" id="onTrackProjects">
+                    1
+                </strong>
+
+                <span class="summary-meta">
+                    Within expected timeline
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOOLBAR -->
+
+        <div class="project-toolbar card">
+
+            <div class="project-search">
+
+                <input
+                    type="text"
+                    id="projectSearch"
+                    placeholder="⌕  Search projects, locations or authorities..."
+                >
+
+            </div>
+
+            <div class="project-filters">
+                <select id="stateFilter" class="select-field">
+                    <option value="all">All States</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Delhi">Delhi</option>
+                </select>
+
+                <select id="riskFilter" class="select-field">
+                    <option value="all">All Risk Levels</option>
+                    <option value="High">High Risk</option>
+                    <option value="Medium">Medium Risk</option>
+                    <option value="Low">Low Risk</option>
+                </select>
+
+                <select id="stageFilter" class="select-field">
+                    <option value="all">All Stages</option>
+                    <option value="Acquisition in Progress"> Acquisition in Progress</option>
+                    <option value="Pre-Possession"> Pre-Possession</option>
+                    <option value="Notification Stage"> Notification Stage</option>
+                </select>
+            </div>
+             
+        </div>
+
+
+        <!-- PROJECT TABLE -->
+
+        <div class="project-table-card card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ACTIVE PORTFOLIO
+                    </span>
+
+                    <h2>
+                        Acquisition Projects
+                    </h2>
+
+                    <p>
+                        AI-assisted monitoring of land acquisition activity.
+                    </p>
+
+                </div>
+
+                <span class="portfolio-count">
+                    5 projects
+                </span>
+
+            </div>
+
+
+            <div class="table-wrap">
+
+                <table class="data-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>PROJECT</th>
+                            <th>LOCATION</th>
+                            <th>STAGE</th>
+                            <th>PROGRESS</th>
+                            <th>DELAY RISK</th>
+                            <th>PREDICTED DELAY</th>
+                            <th>ACTION</th>
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="projectsTableBody">
+
+                        <tr>
+
+                            <td>
+                                <strong>Mumbai Coastal Connector</strong>
+                                <br>
+                                <small>PRJ-001</small>
+                            </td>
+
+                            <td>
+                                Maharashtra
+                                <br>
+                                <small>Mumbai</small>
+                            </td>
+
+                            <td>Acquisition</td>
+
+                            <td>
+                                <div class="project-progress">
+
+                                    <div class="project-progress-top">
+                                        <span>68%</span>
+                                    </div>
+
+                                    <div class="project-progress-track">
+                                        <div
+                                            class="project-progress-fill"
+                                            style="width:68%"
+                                        ></div>
+                                    </div>
+
+                                </div>
+                            </td>
+
+                            <td>
+                                🔴 High
+                            </td>
+
+                            <td>
+                                <strong>64 days</strong>
+                            </td>
+
+                            <td>
+                                <button class="project-action-button">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>NH-56 Expansion</strong>
+                                <br>
+                                <small>PRJ-002</small>
+                            </td>
+
+                            <td>
+                                Gujarat
+                                <br>
+                                <small>Narmada</small>
+                            </td>
+
+                            <td>Acquisition</td>
+
+                            <td>
+
+                                <div class="project-progress">
+
+                                    <div class="project-progress-top">
+                                        <span>42%</span>
+                                    </div>
+
+                                    <div class="project-progress-track">
+                                        <div
+                                            class="project-progress-fill"
+                                            style="width:42%"
+                                        ></div>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                🔴 High
+                            </td>
+
+                            <td>
+                                <strong>51 days</strong>
+                            </td>
+
+                            <td>
+                                <button class="project-action-button">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>Delhi Freight Corridor</strong>
+                                <br>
+                                <small>PRJ-003</small>
+                            </td>
+
+                            <td>
+                                Delhi
+                                <br>
+                                <small>New Delhi</small>
+                            </td>
+
+                            <td>Planning</td>
+
+                            <td>
+
+                                <div class="project-progress">
+
+                                    <div class="project-progress-top">
+                                        <span>25%</span>
+                                    </div>
+
+                                    <div class="project-progress-track">
+                                        <div
+                                            class="project-progress-fill"
+                                            style="width:25%"
+                                        ></div>
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                🟠 Medium
+                            </td>
+
+                            <td>
+                                <strong>21 days</strong>
+                            </td>
+
+                            <td>
+                                <button class="project-action-button">
+                                    View
+                                </button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =================================================
+             04 — AI PREDICTION
+             ================================================= -->
+
+        <section
+            class="view"
+            id="predictionView"
+        >
+
+            <div class="view-placeholder">
+
+                <span>
+                    04 · PREDICTIVE INTELLIGENCE
+                </span>
+
+                <h1>
+                    AI prediction
+                </h1>
+
+                <p>
+                    Understand why a project is predicted to
+                    experience delay and which factors are
+                    contributing most to the risk.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             05 — SIMULATOR
+             ================================================= -->
+
+        <section
+            class="view"
+            id="simulatorView"
+        >
+
+            <!-- simulator.js fills this -->
+
+        </section>
+
+
+
+        <!-- =================================================
+             06 — DOCUMENTS
+             ================================================= -->
+
+        <section
+            class="view"
+            id="documentsView"
+        >
+
+            <!-- documents.js fills this -->
+
+        </section>
+
+
+
+        <!-- =================================================
+             07 — R&R
+             ================================================= -->
+
+        <section
+            class="view"
+            id="rrView"
+        >
+
+            <div class="view-placeholder">
+
+                <span>
+                    07 · REHABILITATION & RESETTLEMENT
+                </span>
+
+                <h1>
+                    R&R
+                </h1>
+
+                <p>
+                    Track affected families, rehabilitation
+                    commitments, relocation progress and
+                    outstanding cases.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             08 — ACTION CENTRE
+             ================================================= -->
+
+        <section
+            class="view"
+            id="actionsView"
+        >
+
+            <div class="view-placeholder">
+
+                <span>
+                    08 · ADMINISTRATIVE ACTION
+                </span>
+
+                <h1>
+                    Action centre
+                </h1>
+
+                <p>
+                    Convert intelligence into practical
+                    intervention plans and follow-up actions.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         BOTTOM COMMAND BAR
+         ===================================================== -->
+
+    <footer class="bottom-command-bar">
+
+
+        <div class="footer-status">
+
+            <span class="state-dot"></span>
+
+            Prototype data environment
+
+        </div>
+
+
+        <div class="footer-actions">
+
+            <button
+                type="button"
+                data-view-target="documents"
+            >
+                Documents
+            </button>
+
+
+            <button
+                type="button"
+                data-view-target="simulator"
+            >
+                Simulate
+            </button>
+
+
+            <button
+                type="button"
+                class="primary-command"
+                id="addProjectButton"
+            >
+                + Add New Project
+            </button>
+
+        </div>
+
+    </footer>
+
+
+
+</div>
+
+
+
+<!-- =========================================================
+     ADD PROJECT MODAL
+     ========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="projectModal"
+    aria-hidden="true"
+>
+
+    <div class="modal">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                    PROJECT INTAKE
+                </span>
+
+                <h2>
+                    Add new project
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="closeProjectModal"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <form
+            class="project-form"
+            id="addProjectForm"
+        >
+
+
+            <div class="form-field">
+
+                <label for="projectName">
+                    Project name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    name="projectName"
+                    placeholder="e.g. Eastern Expressway"
+                    required
+                >
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-field">
+
+                    <label for="projectType">
+                        Project type
+                    </label>
+
+                    <select
+                        id="projectType"
+                        name="projectType"
+                        required
+                    >
+
+                        <option value="">
+                            Select type
+                        </option>
+
+                        <option>
+                            National Highway
+                        </option>
+
+                        <option>
+                            State Highway
+                        </option>
+
+                        <option>
+                            Expressway
+                        </option>
+
+                        <option>
+                            Railway
+                        </option>
+
+                        <option>
+                            Metro / Transit
+                        </option>
+
+                        <option>
+                            Industrial Corridor
+                        </option>
+
+                        <option>
+                            Other Infrastructure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="state">
+                        State
+                    </label>
+
+                    <select
+                        id="state"
+                        name="state"
+                        required
+                    >
+
+                        <option value="">
+                            Select state
+                        </option>
+
+                        <option>
+                            Gujarat
+                        </option>
+
+                        <option>
+                            Madhya Pradesh
+                        </option>
+
+                        <option>
+                            Uttar Pradesh
+                        </option>
+
+                        <option>
+                            Rajasthan
+                        </option>
+
+                        <option>
+                            Maharashtra
+                        </option>
+
+                        <option>
+                            Telangana
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-field">
+
+                    <label for="landCategory">
+                        Land category
+                    </label>
+
+                    <select
+                        id="landCategory"
+                        name="landCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select land category
+                        </option>
+
+                        <option value="Agricultural">
+                            Agricultural Land
+                        </option>
+
+                        <option value="Residential">
+                            Residential / Settlement
+                        </option>
+
+                        <option value="Forest">
+                            Forest / Protected Area
+                        </option>
+
+                        <option value="Government">
+                            Government Land
+                        </option>
+
+                        <option value="Industrial">
+                            Industrial Land
+                        </option>
+
+                        <option value="Commercial">
+                            Commercial Land
+                        </option>
+
+                        <option value="Barren">
+                            Barren / Wasteland
+                        </option>
+
+                        <option value="Wetland">
+                            Wetland / Water-sensitive Area
+                        </option>
+
+                        <option value="Mixed">
+                            Mixed Land Use
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+
+                <div class="form-field">
+
+                    <label for="district">
+                        District
+                    </label>
+
+                    <input
+                        type="text"
+                        id="district"
+                        name="district"
+                        placeholder="District"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="landRequired">
+                        Land required (Ha)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="landRequired"
+                        name="landRequired"
+                        min="0"
+                        step="0.1"
+                        placeholder="0"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="form-row">
+
+
+                <div class="form-field">
+
+                    <label for="landAcquired">
+                        Already acquired (Ha)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="landAcquired"
+                        name="landAcquired"
+                        min="0"
+                        step="0.1"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <div class="form-field">
+
+                    <label for="affectedFamilies">
+                        Affected families
+                    </label>
+
+                    <input
+                        type="number"
+                        id="affectedFamilies"
+                        name="affectedFamilies"
+                        min="0"
+                        value="0"
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelProject"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Add project
+                    <span>
+                        →
+                    </span>
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     PROJECT INVESTIGATION DRAWER
+     ========================================================= -->
+
+<div
+    class="drawer-overlay"
+    id="projectDrawerOverlay"
+></div>
+
+
+<aside
+    class="project-drawer"
+    id="projectDrawer"
+>
+
+
+    <button
+        type="button"
+        class="drawer-close"
+        id="closeProjectDrawer"
+        aria-label="Close project"
+    >
+        ×
+    </button>
+
+
+    <div id="projectDrawerContent">
+
+        <!-- Generated by app.js -->
+
+    </div>
+
+
+</aside>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/gis.js"></script>
+<script src="js/simulator.js"></script>
+<script src="js/documents.js"></script>
+<script src="js/prediction.js"></script>
+<script src="js/rr.js"></script>
+<script src="js/actions.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1386 @@
+/* ============================================================
+   LANDTRACK AI — PROJECT PORTFOLIO
+   ============================================================ */
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.projects-page {
+    width: min(1440px, calc(100% - 64px));
+    margin: 0 auto;
+    padding: 42px 0 110px;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.projects-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+
+    margin-bottom: 32px;
+}
+
+.page-eyebrow,
+.table-eyebrow {
+    margin: 0 0 9px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+.projects-hero h1 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+}
+
+.projects-description {
+    max-width: 680px;
+
+    margin: 12px 0 0;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ADD BUTTON */
+
+.add-project-hero-button {
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--text);
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.add-project-hero-button span {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.add-project-hero-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+
+/* ============================================================
+   SUMMARY CARDS
+   ============================================================ */
+
+.project-summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 22px;
+}
+
+.project-summary-card {
+    min-height: 145px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 30px rgba(20, 38, 32, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.project-summary-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 35px rgba(20, 38, 32, 0.08);
+}
+
+.summary-label {
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.1px;
+
+    text-transform: uppercase;
+}
+
+.summary-value {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 36px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.summary-value.danger {
+    color: #b94a48;
+}
+
+.summary-value.warning {
+    color: #b77a22;
+}
+
+.summary-value.success {
+    color: #28735d;
+}
+
+.summary-meta {
+    margin-top: 10px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+
+/* ============================================================
+   TOOLBAR
+   ============================================================ */
+
+.projects-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 14px;
+
+    margin-bottom: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.project-search-box {
+    flex: 1;
+
+    min-width: 260px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    min-height: 46px;
+
+    background: #f7f8f6;
+
+    border: 1px solid transparent;
+
+    border-radius: 9px;
+}
+
+.project-search-box span {
+    color: var(--text-muted);
+
+    font-size: 20px;
+}
+
+.project-search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+}
+
+.project-search-box:focus-within {
+    border-color: rgba(183, 122, 34, 0.5);
+}
+
+.project-filter-group {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.project-filter-group select {
+    min-height: 46px;
+
+    padding: 0 30px 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--text-secondary);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.project-filter-group select.filter-active {
+    border-color: var(--gold);
+
+    background: #fffbf4;
+
+    color: var(--text);
+
+    font-weight: 700;
+}
+
+.clear-filter-button,
+.export-button {
+    min-height: 46px;
+
+    padding: 0 14px;
+
+    border-radius: 8px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.clear-filter-button {
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    color: var(--text-secondary);
+}
+
+.export-button {
+    border: 1px solid var(--text);
+
+    background: var(--text);
+
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   TABLE SECTION
+   ============================================================ */
+
+.projects-table-section {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 35px rgba(20, 38, 32, 0.04);
+}
+
+.table-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 26px 22px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.table-section-header h2 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.table-section-header p:not(.table-eyebrow) {
+    margin: 6px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+.portfolio-count {
+    padding: 8px 12px;
+
+    border-radius: 100px;
+
+    background: #f3f5f2;
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.projects-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.projects-table {
+    width: 100%;
+    min-width: 1100px;
+
+    border-collapse: collapse;
+}
+
+.projects-table th {
+    padding: 15px 18px;
+
+    background: #fafbf9;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.projects-table td {
+    padding: 18px;
+
+    border-bottom: 1px solid #edf0ec;
+
+    vertical-align: middle;
+}
+
+.projects-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.projects-table tbody tr:hover {
+    background: #fbfcfa;
+}
+
+.projects-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* PROJECT NAME */
+
+.project-name-cell {
+    min-width: 190px;
+}
+
+.project-name,
+.project-id,
+.project-state,
+.project-district {
+    display: block;
+}
+
+.project-name {
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.project-id {
+    margin-top: 5px;
+
+    color: var(--text-muted);
+
+    font-family: monospace;
+
+    font-size: 10px;
+}
+
+
+/* LOCATION */
+
+.project-location-cell {
+    min-width: 150px;
+}
+
+.project-state {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.project-district {
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+
+/* STAGE */
+
+.project-stage {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+/* PROGRESS */
+
+.project-progress {
+    width: 110px;
+}
+
+.project-progress-value {
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.project-progress-track {
+    width: 100%;
+    height: 6px;
+
+    margin-top: 7px;
+
+    overflow: hidden;
+
+    border-radius: 50px;
+
+    background: #e8ece7;
+}
+
+.project-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--teal);
+}
+
+
+/* DELAY */
+
+.delay-days {
+    display: block;
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+    font-weight: 750;
+}
+
+.delay-label {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+
+/* STATUS */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 6px 9px;
+
+    border-radius: 100px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.status-critical {
+    background: #fff0ef;
+    color: #b94a48;
+}
+
+.status-high {
+    background: #fff5e8;
+    color: #b46e1d;
+}
+
+.status-medium {
+    background: #fff9df;
+    color: #9a7a16;
+}
+
+.status-low {
+    background: #edf8f2;
+    color: #28735d;
+}
+
+.status-neutral {
+    background: #f0f2f1;
+    color: #69736d;
+}
+
+
+/* ACTION */
+
+.project-action-button {
+    min-width: 66px;
+
+    padding: 8px 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 750;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.project-action-button:hover {
+    background: var(--text);
+
+    border-color: var(--text);
+
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+.project-empty-state {
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    text-align: center;
+}
+
+.project-empty-state.hidden {
+    display: none;
+}
+
+.empty-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #f3f5f2;
+
+    font-size: 22px;
+}
+
+.project-empty-state h3 {
+    margin: 14px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 19px;
+}
+
+.project-empty-state p {
+    margin: 7px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   TABLE FOOTER
+   ============================================================ */
+
+.projects-table-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 22px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(17, 27, 23, 0.48);
+
+    backdrop-filter: blur(5px);
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.project-modal {
+    width: min(760px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.25);
+
+    animation: modal-enter 0.25s ease;
+}
+
+.project-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 25px 28px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.project-modal-header p {
+    margin: 0 0 5px;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.project-modal-header h2 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 22px;
+}
+
+.modal-close-button {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f5f2;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+/* FORM */
+
+.project-form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 25px 28px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 0 12px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--gold);
+}
+
+.form-group small {
+    color: var(--text-muted);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* MODAL FOOTER */
+
+.project-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding: 18px 28px 24px;
+
+    border-top: 1px solid var(--border);
+}
+
+.cancel-project-button,
+.submit-project-button {
+    min-height: 44px;
+
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 12px;
+    font-weight: 750;
+
+    cursor: pointer;
+}
+
+.cancel-project-button {
+    border: 1px solid var(--border);
+
+    background: #ffffff;
+
+    color: var(--text-secondary);
+}
+
+.submit-project-button {
+    border: none;
+
+    background: var(--text);
+
+    color: #ffffff;
+}
+
+
+/* ============================================================
+   ANIMATION
+   ============================================================ */
+
+@keyframes modal-enter {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1150px) {
+
+    .project-summary-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .projects-toolbar {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .project-filter-group {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .projects-page {
+        width: min(100% - 32px, 1440px);
+
+        padding-top: 28px;
+    }
+
+    .projects-hero {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .project-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-filter-group {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-filter-group select,
+    .clear-filter-button,
+    .export-button {
+        width: 100%;
+    }
+
+    .table-section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .projects-table-footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 7px;
+    }
+
+    .project-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .project-filter-group {
+        grid-template-columns: 1fr;
+    }
+
+    .project-modal-header,
+    .project-form-grid,
+    .project-modal-footer {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+}
+
+/* ===== FORCE PROJECT PAGE LAYOUT FIX ===== */
+
+.projects-page {
+    width: min(1440px, calc(100% - 64px)) !important;
+    margin: 0 auto !important;
+    padding: 42px 0 110px !important;
+    min-height: auto !important;
+}
+
+.projects-hero {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: space-between !important;
+
+    min-height: 0 !important;
+    height: auto !important;
+
+    margin-bottom: 32px !important;
+}
+
+.projects-hero h1 {
+    font-size: clamp(42px, 4vw, 52px) !important;
+    line-height: 1.05 !important;
+}
+
+.project-summary-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr)) !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 22px !important;
+}
+
+.project-summary-card {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.projects-toolbar,
+.projects-table-section {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.projects-toolbar {
+    display: flex !important;
+}
+
+.projects-table-section {
+    display: block !important;
+}
+
+/* ============================================================
+   PROJECT PAGE — MISSING UI STYLES
+   ============================================================ */
+
+.projects-page {
+    width: 100%;
+    padding: 48px 52px 100px;
+}
+
+.projects-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 28px;
+}
+
+.projects-header h1 {
+    margin: 10px 0 10px;
+    font-family: "Manrope", sans-serif;
+    font-size: 46px;
+    line-height: 1;
+    color: var(--text);
+}
+
+.projects-header p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.add-project-btn {
+    flex-shrink: 0;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 9px;
+    background: var(--teal);
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   TOOLBAR FIX
+   ============================================================ */
+
+.project-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 18px;
+    margin-bottom: 26px;
+}
+
+.project-search {
+    flex: 1;
+}
+
+.project-search input {
+    width: 100%;
+    height: 46px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.project-search input:focus {
+    border-color: var(--teal);
+}
+
+.project-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.select-field {
+    height: 46px;
+    min-width: 145px;
+    padding: 0 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    background: #fff;
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+/* ============================================================
+   TABLE CARD FIX
+   ============================================================ */
+
+.project-table-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.project-table-card .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2 {
+    margin: 8px 0 6px;
+    font-family: "Manrope", sans-serif;
+    font-size: 24px;
+    color: var(--text);
+}
+
+.card-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+.portfolio-count {
+    padding: 8px 13px;
+    border-radius: 20px;
+    background: #f2f5f4;
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   TABLE
+   ============================================================ */
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 950px;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.data-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #edf0ef;
+    color: var(--text-secondary);
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background: #fafcfb;
+}
+
+.data-table td strong {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.data-table td small {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.project-progress {
+    width: 105px;
+}
+
+.project-progress-top {
+    margin-bottom: 7px;
+    font-size: 11px;
+    font-weight: 750;
+    color: var(--text);
+}
+
+.project-progress-track {
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e8eeee;
+}
+
+.project-progress-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--teal);
+}
+
+
+/* ============================================================
+   ACTION BUTTON
+   ============================================================ */
+
+.project-action-button {
+    min-width: 70px;
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: #fff;
+    color: var(--teal);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+.project-action-button:hover {
+    background: #edf7f5;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    .projects-page {
+        padding: 35px 24px 100px;
+    }
+
+    .projects-header {
+        flex-direction: column;
+    }
+
+    .project-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-filters {
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .projects-header h1 {
+        font-size: 38px;
+    }
+
+    .project-filters {
+        flex-direction: column;
+    }
+
+    .select-field {
+        width: 100%;
+    }
+
+}

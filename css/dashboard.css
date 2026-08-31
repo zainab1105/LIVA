@@ -1,0 +1,874 @@
+/* ============================================================
+   LANDTRACK AI
+   COMMAND CENTER
+   ============================================================ */
+
+
+/* ============================================================
+   01. DASHBOARD INTRO
+   ============================================================ */
+
+.dashboard-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 24px;
+}
+
+.dashboard-kicker {
+    margin-bottom: 7px;
+
+    color: var(--teal);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.dashboard-title {
+    font-size: 31px;
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+}
+
+.dashboard-subtitle {
+    margin-top: 7px;
+
+    color: var(--text-secondary);
+
+    font-size: 15px;
+}
+
+.dashboard-date {
+    padding: 9px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: var(--surface);
+
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   02. KPI GRID
+   ============================================================ */
+
+.dashboard-kpi-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   03. KPI CARD
+   ============================================================ */
+
+.dashboard-kpi {
+    position: relative;
+
+    min-height: 145px;
+
+    padding: 20px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-small);
+}
+
+.dashboard-kpi::after {
+    content: "";
+
+    position: absolute;
+
+    right: -25px;
+    bottom: -40px;
+
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+
+    background: rgba(35, 139, 141, 0.045);
+}
+
+.kpi-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kpi-label {
+    color: var(--text-muted);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.6px;
+
+    text-transform: uppercase;
+}
+
+.kpi-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #edf5f7;
+
+    color: var(--blue);
+
+    font-size: 16px;
+}
+
+.kpi-value {
+    margin-top: 13px;
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 34px;
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+.kpi-meta {
+    margin-top: 9px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.kpi-meta strong {
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   04. MAIN DASHBOARD GRID
+   ============================================================ */
+
+.dashboard-main-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.65fr)
+        minmax(310px, 0.75fr);
+
+    gap: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ============================================================
+   05. MAP PANEL
+   ============================================================ */
+
+.risk-map-card {
+    min-height: 445px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-small);
+}
+
+.risk-map-header {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 17px 20px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.risk-map-title {
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.risk-map-description {
+    margin-top: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+}
+
+.map-controls {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.map-filter {
+    padding: 7px 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: var(--text-secondary);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* ============================================================
+   06. MAP AREA
+   ============================================================ */
+
+.risk-map {
+    position: relative;
+
+    min-height: 375px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #edf5f6,
+            #f7faf9
+        );
+}
+
+
+/* Grid lines */
+
+.risk-map::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: 0.35;
+
+    background-image:
+        linear-gradient(
+            rgba(35, 139, 141, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(35, 139, 141, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    pointer-events: none;
+}
+
+
+/* Map placeholder */
+
+.map-india {
+    position: absolute;
+
+    inset: 28px 25% 20px 18%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #8ab5b8;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 90px;
+    font-weight: 800;
+
+    opacity: 0.18;
+
+    letter-spacing: -8px;
+}
+
+
+/* Map markers */
+
+.map-marker {
+    position: absolute;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    border: 3px solid rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 2px 7px rgba(0, 0, 0, 0.2);
+
+    z-index: 3;
+}
+
+.map-marker.critical {
+    background: var(--red);
+}
+
+.map-marker.high {
+    background: var(--amber);
+}
+
+.map-marker.medium {
+    background: #c7a52e;
+}
+
+.map-marker.low {
+    background: var(--green);
+}
+
+.map-marker::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border: 1px solid currentColor;
+
+    opacity: 0.25;
+
+    animation: marker-pulse 2.2s infinite;
+}
+
+@keyframes marker-pulse {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+
+        opacity: 0.15;
+    }
+
+    50% {
+        transform: scale(1.2);
+
+        opacity: 0.35;
+    }
+}
+
+
+/* Map legend */
+
+.map-legend {
+    position: absolute;
+
+    left: 18px;
+    bottom: 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 9px 11px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 7px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow: var(--shadow-small);
+
+    backdrop-filter: blur(5px);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    color: var(--text-secondary);
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.legend-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+}
+
+.legend-dot.critical {
+    background: var(--red);
+}
+
+.legend-dot.high {
+    background: var(--amber);
+}
+
+.legend-dot.medium {
+    background: #c7a52e;
+}
+
+.legend-dot.low {
+    background: var(--green);
+}
+
+
+/* ============================================================
+   07. PRIORITY PROJECTS
+   ============================================================ */
+
+.priority-card {
+    min-height: 445px;
+
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-small);
+}
+
+.priority-header {
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px 19px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.priority-title {
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.priority-count {
+    color: var(--red);
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.priority-list {
+    padding: 5px 0;
+}
+
+.priority-item {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 14px 18px;
+
+    border-bottom: 1px solid #edf0f2;
+
+    transition:
+        background 0.15s ease;
+}
+
+.priority-item:hover {
+    background: #fafcfd;
+}
+
+.priority-item:last-child {
+    border-bottom: none;
+}
+
+.priority-risk {
+    width: 7px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 5px;
+}
+
+.priority-risk.critical {
+    background: var(--red);
+}
+
+.priority-risk.high {
+    background: var(--amber);
+}
+
+.priority-risk.medium {
+    background: #c7a52e;
+}
+
+.priority-info {
+    min-width: 0;
+
+    flex: 1;
+}
+
+.priority-project {
+    overflow: hidden;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 750;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.priority-location {
+    margin-top: 3px;
+
+    color: var(--text-muted);
+
+    font-size: 10px;
+}
+
+.priority-score {
+    text-align: right;
+}
+
+.priority-score strong {
+    display: block;
+
+    color: var(--red);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.priority-score span {
+    color: var(--text-muted);
+
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   08. LOWER ANALYTICS GRID
+   ============================================================ */
+
+.dashboard-lower-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+    gap: 18px;
+}
+
+
+/* ============================================================
+   09. DELAY DRIVERS
+   ============================================================ */
+
+.delay-drivers-card,
+.stage-risk-card {
+    min-height: 310px;
+
+    padding: 20px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-md);
+
+    box-shadow: var(--shadow-small);
+}
+
+.analytics-card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 23px;
+}
+
+.analytics-card-heading h3 {
+    font-size: 17px;
+}
+
+.analytics-card-heading p {
+    margin-top: 3px;
+
+    font-size: 11px;
+}
+
+.analytics-period {
+    padding: 6px 9px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 6px;
+
+    color: var(--text-muted);
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* Driver */
+
+.driver-item {
+    margin-bottom: 18px;
+}
+
+.driver-item:last-child {
+    margin-bottom: 0;
+}
+
+.driver-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+.driver-name {
+    color: var(--text-secondary);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.driver-value {
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.driver-track {
+    width: 100%;
+    height: 8px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #edf1f3;
+}
+
+.driver-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--teal);
+
+    transition: width 0.5s ease;
+}
+
+
+/* ============================================================
+   10. STAGE RISK
+   ============================================================ */
+
+.stage-list {
+    display: grid;
+
+    gap: 13px;
+}
+
+.stage-item {
+    display: grid;
+
+    grid-template-columns: 120px 1fr 48px;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+.stage-name {
+    color: var(--text-secondary);
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.stage-track {
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #edf1f3;
+}
+
+.stage-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: var(--blue);
+}
+
+.stage-risk-value {
+    color: var(--text);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    text-align: right;
+}
+
+
+/* ============================================================
+   11. DASHBOARD RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1200px) {
+
+    .dashboard-kpi-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .priority-card {
+        min-height: auto;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-intro {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .dashboard-title {
+        font-size: 27px;
+    }
+
+    .dashboard-subtitle {
+        font-size: 14px;
+    }
+
+    .dashboard-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-kpi {
+        min-height: 135px;
+    }
+
+    .risk-map-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .map-controls {
+        width: 100%;
+    }
+
+    .map-filter {
+        flex: 1;
+    }
+
+    .risk-map {
+        min-height: 330px;
+    }
+
+    .map-india {
+        font-size: 65px;
+    }
+
+    .stage-item {
+        grid-template-columns: 95px 1fr 40px;
+    }
+}
+
+#dashboardMap {
+    width: 100%;
+    height: 100%;
+    min-height: 570px;
+    z-index: 1;
+}
+
+.leaflet-container {
+    font-family: "DM Sans", sans-serif;
+}
+
+.landtrack-dashboard-marker {
+    background: transparent;
+    border: none;
+}

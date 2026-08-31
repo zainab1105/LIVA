@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Projects | LIVA</title>
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/main.css">
+
+    <link rel="stylesheet" href="../css/components.css">
+
+    <link rel="stylesheet" href="../css/projects.css">
+
+</head>
+
+
+<body>
+
+    <h1 style="color:red; font-size:60px;">
+    TEST PROJECT PAGE 123
+</h1>
+
+    <div class="app-shell">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="top-header-new">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="dashboard.html"
+                class="brand"
+            >
+
+                <div class="brand-logo">
+                    LT
+                </div>
+
+
+                <div class="brand-text">
+
+                    <strong>
+                        LIVA
+                    </strong>
+
+                    <span>
+                        LAND ACQUISITION INTELLIGENCE
+                    </span>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- SEARCH -->
+
+            <div class="global-search">
+
+                <span>
+                    ⌕
+                </span>
+
+                <input
+                    type="text"
+                    placeholder="Search project, parcel, survey number..."
+                >
+
+                <kbd>
+                    Ctrl K
+                </kbd>
+
+            </div>
+
+
+
+            <!-- HEADER RIGHT -->
+
+            <div class="header-actions">
+
+
+                <a
+                    href="alerts.html"
+                    class="header-link"
+                >
+
+                    Alerts
+
+                    <span class="alert-count">
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="documents.html"
+                    class="header-link"
+                >
+                    Documents
+                </a>
+
+
+                <div class="government-user">
+
+                    <div class="government-avatar">
+                        GO
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            Government Officer
+                        </strong>
+
+                        <span>
+                            Land Acquisition
+                        </span>
+
+                    </div>
+
+
+                    <span class="user-arrow">
+                        ▾
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =====================================================
+             MAIN NAVIGATION
+        ====================================================== -->
+
+        <nav class="main-navigation">
+
+
+            <a
+                href="dashboard.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    01
+                </span>
+
+                Overview
+
+            </a>
+
+
+
+            <a
+                href="gis-map.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    02
+                </span>
+
+                Land Map
+
+            </a>
+
+
+
+            <a
+                href="index.html#projects"
+                class="mode-item active"
+            >
+
+                <span class="mode-number">
+                    03
+                </span>
+
+                Projects
+
+            </a>
+
+
+
+            <a
+                href="risk-analysis.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    04
+                </span>
+
+                AI Prediction
+
+            </a>
+
+
+
+            <a
+                href="simulator.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    05
+                </span>
+
+                Simulator
+
+            </a>
+
+
+
+            <a
+                href="documents.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    06
+                </span>
+
+                Documents
+
+            </a>
+
+
+
+            <a
+                href="recommendations.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    07
+                </span>
+
+                R&amp;R
+
+            </a>
+
+
+
+            <a
+                href="alerts.html"
+                class="mode-item"
+            >
+
+                <span class="mode-number">
+                    08
+                </span>
+
+                Action Centre
+
+            </a>
+
+
+        </nav>
+
+
+
+        <!-- =====================================================
+             PAGE
+        ====================================================== -->
+
+        <main class="projects-page">
+
+
+
+            <!-- HERO -->
+
+            <section class="projects-hero">
+
+
+                <div>
+
+                    <p class="page-eyebrow">
+                        03 · PROJECT PORTFOLIO
+                    </p>
+
+
+                    <h1>
+                        Projects
+                    </h1>
+
+
+                    <p class="projects-description">
+
+                        Monitor land acquisition projects, track progress,
+                        identify delay risks and prioritize projects
+                        requiring intervention.
+
+                    </p>
+
+                </div>
+
+
+
+                <button
+                    class="add-project-hero-button"
+                    id="addProjectButton"
+                >
+
+                    <span>
+                        +
+                    </span>
+
+                    Add New Project
+
+                </button>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="project-summary-grid">
+
+
+                <div class="project-summary-card">
+
+                    <span class="summary-label">
+                        TOTAL PROJECTS
+                    </span>
+
+
+                    <strong
+                        class="summary-value"
+                        id="totalProjects"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="summary-meta">
+                        Projects in portfolio
+                    </span>
+
+                </div>
+
+
+
+                <div class="project-summary-card">
+
+                    <span class="summary-label">
+                        HIGH RISK
+                    </span>
+
+
+                    <strong
+                        class="summary-value danger"
+                        id="highRiskProjects"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="summary-meta">
+                        Require intervention
+                    </span>
+
+                </div>
+
+
+
+                <div class="project-summary-card">
+
+                    <span class="summary-label">
+                        AT RISK
+                    </span>
+
+
+                    <strong
+                        class="summary-value warning"
+                        id="atRiskProjects"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="summary-meta">
+                        Under monitoring
+                    </span>
+
+                </div>
+
+
+
+                <div class="project-summary-card">
+
+                    <span class="summary-label">
+                        ON TRACK
+                    </span>
+
+
+                    <strong
+                        class="summary-value success"
+                        id="onTrackProjects"
+                    >
+                        0
+                    </strong>
+
+
+                    <span class="summary-meta">
+                        Within expected timeline
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <section class="projects-toolbar">
+
+
+                <div class="project-search-box">
+
+                    <span>
+                        ⌕
+                    </span>
+
+
+                    <input
+                        type="search"
+                        id="projectSearch"
+                        placeholder="Search projects, locations or authorities..."
+                    >
+
+                </div>
+
+
+
+                <div class="project-filter-group">
+
+
+                    <select
+                        id="stateFilter"
+                    >
+
+                        <option value="all">
+                            All States
+                        </option>
+
+                    </select>
+
+
+
+                    <select
+                        id="riskFilter"
+                    >
+
+                        <option value="all">
+                            All Risk Levels
+                        </option>
+
+                        <option value="Critical">
+                            Critical
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                    </select>
+
+
+
+                    <select
+                        id="stageFilter"
+                    >
+
+                        <option value="all">
+                            All Stages
+                        </option>
+
+                    </select>
+
+
+
+                    <button
+                        id="clearFilters"
+                        class="clear-filter-button"
+                    >
+                        Clear
+                    </button>
+
+
+                    <button
+                        id="exportProjects"
+                        class="export-button"
+                    >
+                        ↓ Export
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROJECT TABLE
+            ================================================== -->
+
+            <section class="projects-table-section">
+
+
+                <div class="table-section-header">
+
+
+                    <div>
+
+                        <p class="table-eyebrow">
+                            ACTIVE PORTFOLIO
+                        </p>
+
+                        <h2>
+                            Acquisition Projects
+                        </h2>
+
+                        <p>
+                            AI-assisted monitoring of land acquisition activity.
+                        </p>
+
+                    </div>
+
+
+
+                    <span
+                        id="portfolioCount"
+                        class="portfolio-count"
+                    >
+                        0 projects
+                    </span>
+
+
+                </div>
+
+
+
+                <div class="projects-table-wrapper">
+
+
+                    <table class="projects-table">
+
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Project
+                                </th>
+
+                                <th>
+                                    Location
+                                </th>
+
+                                <th>
+                                    Stage
+                                </th>
+
+                                <th>
+                                    Progress
+                                </th>
+
+                                <th>
+                                    Delay Risk
+                                </th>
+
+                                <th>
+                                    Predicted Delay
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+
+                        <tbody
+                            id="projectsTableBody"
+                        >
+
+                        </tbody>
+
+
+                    </table>
+
+
+                </div>
+
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    class="project-empty-state hidden"
+                    id="projectEmptyState"
+                >
+
+                    <div class="empty-icon">
+                        ⌕
+                    </div>
+
+
+                    <h3>
+                        No projects found
+                    </h3>
+
+
+                    <p>
+                        Try changing your search or filter criteria.
+                    </p>
+
+
+                </div>
+
+
+
+                <div class="projects-table-footer">
+
+                    <span
+                        id="tableResultInfo"
+                    >
+                        Showing 0 projects
+                    </span>
+
+
+                    <span>
+                        LandTrack AI · Prototype Environment
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =====================================================
+             FOOTER ACTION BAR
+        ====================================================== -->
+
+        <footer class="bottom-action-bar">
+
+
+            <div class="environment-status">
+
+                <span></span>
+
+                Prototype data environment
+
+            </div>
+
+
+
+            <div class="bottom-actions">
+
+
+                <a href="documents.html">
+                    Documents
+                </a>
+
+
+                <a href="simulator.html">
+                    Simulate
+                </a>
+
+
+                <button
+                    id="bottomAddProject"
+                    class="bottom-add-project"
+                >
+
+                    + Add New Project
+
+                </button>
+
+
+            </div>
+
+
+        </footer>
+
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ADD PROJECT MODAL
+    ========================================================== -->
+
+    <div
+        class="modal-overlay hidden"
+        id="projectModal"
+    >
+
+
+        <div class="project-modal">
+
+
+            <!-- MODAL HEADER -->
+
+            <div class="project-modal-header">
+
+
+                <div>
+
+                    <p>
+                        NEW PROJECT
+                    </p>
+
+
+                    <h2>
+                        Add Land Acquisition Project
+                    </h2>
+
+                </div>
+
+
+
+                <button
+                    id="closeProjectModal"
+                    class="modal-close-button"
+                >
+                    ×
+                </button>
+
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form
+                id="addProjectForm"
+            >
+
+
+                <div class="project-form-grid">
+
+
+                    <!-- PROJECT NAME -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Project Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="e.g. Mumbai–Nagpur Expressway"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- PROJECT TYPE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Project Type *
+                        </label>
+
+                        <select
+                            name="projectType"
+                            required
+                        >
+
+                            <option value="">
+                                Select project type
+                            </option>
+
+                            <option value="Highway">
+                                Highway
+                            </option>
+
+                            <option value="Expressway">
+                                Expressway
+                            </option>
+
+                            <option value="Railway">
+                                Railway
+                            </option>
+
+                            <option value="Metro">
+                                Metro
+                            </option>
+
+                            <option value="Industrial">
+                                Industrial
+                            </option>
+
+                            <option value="Logistics">
+                                Logistics
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- LAND CATEGORY -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Land Category *
+                        </label>
+
+                        <select
+                            name="landCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select land type
+                            </option>
+
+                            <option value="Agricultural Land">
+                                Agricultural Land
+                            </option>
+
+                            <option value="Residential / Settlement">
+                                Residential / Settlement
+                            </option>
+
+                            <option value="Industrial Land">
+                                Industrial Land
+                            </option>
+
+                            <option value="Government Land">
+                                Government Land
+                            </option>
+
+                            <option value="Barren / Vacant Land">
+                                Barren / Vacant Land
+                            </option>
+
+                            <option value="Forest / Protected Area">
+                                Forest / Protected Area
+                            </option>
+
+                            <option value="Water Body / Wetland">
+                                Water Body / Wetland
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- STATE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            State *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="state"
+                            placeholder="e.g. Maharashtra"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DISTRICT -->
+
+                    <div class="form-group">
+
+                        <label>
+                            District *
+                        </label>
+
+                        <input
+                            type="text"
+                            name="district"
+                            placeholder="Enter district"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- AUTHORITY -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Responsible Authority
+                        </label>
+
+                        <input
+                            type="text"
+                            name="authority"
+                            placeholder="Authority name"
+                        >
+
+                    </div>
+
+
+
+                    <!-- LAND AREA -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Land Area (Hectares)
+                        </label>
+
+                        <input
+                            type="number"
+                            name="landArea"
+                            placeholder="e.g. 850"
+                            min="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- AFFECTED FAMILIES -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Affected Families
+                        </label>
+
+                        <input
+                            type="number"
+                            name="affectedFamilies"
+                            placeholder="e.g. 420"
+                            min="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- ACQUISITION STAGE -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Current Acquisition Stage
+                        </label>
+
+                        <select
+                            name="acquisitionStage"
+                        >
+
+                            <option value="Notification">
+                                Notification
+                            </option>
+
+                            <option value="Survey">
+                                Survey
+                            </option>
+
+                            <option value="Approval">
+                                Approval
+                            </option>
+
+                            <option value="Compensation">
+                                Compensation
+                            </option>
+
+                            <option value="Possession">
+                                Possession
+                            </option>
+
+                            <option value="Rehabilitation">
+                                Rehabilitation
+                            </option>
+
+                            <option value="Legal Resolution">
+                                Legal Resolution
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- RISK -->
+
+                    <div class="form-group full-width">
+
+                        <label>
+                            Initial Risk Assessment
+                        </label>
+
+                        <select
+                            name="riskLevel"
+                        >
+
+                            <option value="Low">
+                                Low
+                            </option>
+
+                            <option
+                                value="Medium"
+                                selected
+                            >
+                                Medium
+                            </option>
+
+                            <option value="High">
+                                High
+                            </option>
+
+                            <option value="Critical">
+                                Critical
+                            </option>
+
+                        </select>
+
+
+                        <small>
+                            Prototype value. The final system can generate this through AI prediction.
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- MODAL FOOTER -->
+
+                <div class="project-modal-footer">
+
+
+                    <button
+                        type="button"
+                        id="cancelProject"
+                        class="cancel-project-button"
+                    >
+                        Cancel
+                    </button>
+
+
+
+                    <button
+                        type="submit"
+                        class="submit-project-button"
+                    >
+                        Add Project →
+                    </button>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- SCRIPTS -->
+
+    <script src="../js/data.js"></script>
+
+    <script src="../js/app.js"></script>
+
+    <script src="../js/projects.js"></script>
+
+
+    <!-- Bottom Add Project -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const bottomButton =
+                    document.getElementById(
+                        "bottomAddProject"
+                    );
+
+
+                const mainButton =
+                    document.getElementById(
+                        "addProjectButton"
+                    );
+
+
+                if (
+                    bottomButton &&
+                    mainButton
+                ) {
+
+                    bottomButton.addEventListener(
+                        "click",
+                        function () {
+
+                            mainButton.click();
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Predictive GIS | LandTrack AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/gis-map.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+</head>
+
+<body>
+
+<div class="app-shell">
+    
+    <!-- ======================================================
+         SIDEBAR
+         ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-mark">
+                LT
+            </div>
+
+            <div class="brand-info">
+
+                <h1>
+                    LandTrack <span>AI</span>
+                </h1>
+
+                <p>
+                    Predictive Governance
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Overview
+                </p>
+
+                <a
+                    href="dashboard.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⌂</span>
+                    <span>Command Center</span>
+                </a>
+
+                <a
+                    href="index.html#projects"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">▣</span>
+                    <span>Project Portfolio</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Intelligence
+                </p>
+
+                <a
+                    href="risk-analysis.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">◈</span>
+                    <span>AI Risk Intelligence</span>
+                </a>
+
+                <a
+                    href="gis-map.html"
+                    class="navigation-item active"
+                >
+                    <span class="navigation-icon">⌖</span>
+                    <span>Predictive GIS</span>
+                </a>
+
+                <a
+                    href="analytics.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">◒</span>
+                    <span>Analytics</span>
+                </a>
+
+                <a
+                    href="recommendations.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">✦</span>
+                    <span>Action Center</span>
+                </a>
+
+                <a
+                    href="digital-twin.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">◇</span>
+                    <span>Delay Digital Twin</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Operations
+                </p>
+
+                <a
+                    href="alerts.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⚠</span>
+                    <span>Alerts</span>
+
+                    <span class="navigation-badge">
+                        07
+                    </span>
+
+                </a>
+
+                <a
+                    href="data-center.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⇧</span>
+                    <span>Data Center</span>
+                </a>
+
+                <a
+                    href="model-health.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⌁</span>
+                    <span>Model Health</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Administration
+                </p>
+
+                <a
+                    href="administration.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⚙</span>
+                    <span>Access & Audit</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+
+                <span class="status-indicator"></span>
+
+                <div>
+
+                    <strong>
+                        System Operational
+                    </strong>
+
+                    <small>
+                        Prototype Environment
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-version">
+                SIH 2026 · SIH26017
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ======================================================
+         MAIN CONTAINER
+         ====================================================== -->
+
+    <div class="main-container">
+
+
+        <!-- ==================================================
+             HEADER
+             ================================================== -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                >
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+
+                    <span>
+                        LAND ACQUISITION INTELLIGENCE
+                    </span>
+
+                    <strong>/</strong>
+
+                    <span>
+                        PREDICTIVE GIS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="header-status">
+
+                    <span class="status-indicator"></span>
+
+                    GIS Intelligence Live
+
+                </div>
+
+
+                <button
+                    class="header-icon-button"
+                    id="notificationButton"
+                >
+                    ♢
+
+                    <span class="notification-count">
+                        7
+                    </span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        ZA
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong>
+                            Project Officer
+                        </strong>
+
+                        <small>
+                            Government Account
+                        </small>
+
+                    </div>
+
+                    <span class="user-chevron">
+                        ▾
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             PAGE CONTENT
+             ================================================== -->
+
+        <main class="page-content">
+
+
+            <!-- PAGE INTRO -->
+
+            <section class="page-intro">
+
+                <div class="page-intro-text">
+
+                    <p class="page-eyebrow">
+                        GEOSPATIAL INTELLIGENCE
+                    </p>
+
+                    <h1 class="page-title">
+                        Predictive GIS
+                    </h1>
+
+                    <p class="page-description">
+                        Visualize acquisition projects geographically
+                        and identify areas with elevated predicted
+                        delay risk.
+                    </p>
+
+                </div>
+
+
+                <div class="page-actions">
+
+                    <button
+                        class="btn btn-secondary"
+                        id="locateIndia"
+                    >
+                        ◎ Reset View
+                    </button>
+
+                    <button
+                        class="btn btn-primary"
+                        id="mapRefresh"
+                    >
+                        ↻ Refresh Analysis
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 MAP TOOLBAR
+                 ================================================== -->
+
+            <section class="gis-toolbar card">
+
+
+                <div class="gis-toolbar-group">
+
+                    <label class="gis-control-label">
+                        State
+                    </label>
+
+                    <select
+                        id="gisStateFilter"
+                        class="select-field"
+                    >
+
+                        <option value="all">
+                            All States
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="gis-toolbar-group">
+
+                    <label class="gis-control-label">
+                        Risk Level
+                    </label>
+
+                    <select
+                        id="gisRiskFilter"
+                        class="select-field"
+                    >
+
+                        <option value="all">
+                            All Risk Levels
+                        </option>
+
+                        <option value="Critical">
+                            Critical
+                        </option>
+
+                        <option value="High">
+                            High
+                        </option>
+
+                        <option value="Medium">
+                            Medium
+                        </option>
+
+                        <option value="Low">
+                            Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="gis-toolbar-group">
+
+                    <label class="gis-control-label">
+                        Project Type
+                    </label>
+
+                    <select
+                        id="gisTypeFilter"
+                        class="select-field"
+                    >
+
+                        <option value="all">
+                            All Project Types
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="gis-toolbar-info">
+
+                    <span class="gis-live-dot"></span>
+
+                    <span>
+                        Showing
+                        <strong id="gisProjectCount">
+                            0
+                        </strong>
+                        projects
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 GIS MAIN GRID
+                 ================================================== -->
+
+            <section class="gis-main-grid">
+
+
+                <!-- ==================================================
+                     MAP
+                     ================================================== -->
+
+                <article class="gis-map-card card">
+
+
+                    <div class="gis-map-header">
+
+                        <div>
+
+                            <h2>
+                                National Risk Overview
+                            </h2>
+
+                            <p>
+                                Predicted land acquisition delay
+                                risk by project location
+                            </p>
+
+                        </div>
+
+
+                        <div class="map-header-actions">
+
+                            <button
+                                class="map-tool-button"
+                                id="zoomIn"
+                            >
+                                +
+                            </button>
+
+                            <button
+                                class="map-tool-button"
+                                id="zoomOut"
+                            >
+                                −
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- MAP CANVAS -->
+
+                    <div
+                        class="gis-map-canvas"
+                        id="gisMapCanvas"
+                    >
+
+
+                        <!-- India silhouette-style prototype -->
+
+                        <div id="indiaMap"></div>
+
+                        <!-- Project markers -->
+
+                        <div
+                            class="gis-markers"
+                            id="gisMarkers"
+                        ></div>
+
+
+
+                        <!-- Map controls -->
+
+                        <div class="map-navigation">
+
+                            <button
+                                id="mapPanUp"
+                                class="map-nav-button"
+                            >
+                                ↑
+                            </button>
+
+                            <div class="map-nav-row">
+
+                                <button
+                                    id="mapPanLeft"
+                                    class="map-nav-button"
+                                >
+                                    ←
+                                </button>
+
+                                <button
+                                    id="mapPanCenter"
+                                    class="map-nav-button"
+                                >
+                                    ⌖
+                                </button>
+
+                                <button
+                                    id="mapPanRight"
+                                    class="map-nav-button"
+                                >
+                                    →
+                                </button>
+
+                            </div>
+
+                            <button
+                                id="mapPanDown"
+                                class="map-nav-button"
+                            >
+                                ↓
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- Legend -->
+
+                        <div class="gis-map-legend">
+
+                            <p class="legend-title">
+                                PREDICTED DELAY RISK
+                            </p>
+
+
+                            <div class="legend-row">
+
+                                <span
+                                    class="legend-dot critical"
+                                ></span>
+
+                                <span>
+                                    Critical
+                                </span>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span
+                                    class="legend-dot high"
+                                ></span>
+
+                                <span>
+                                    High
+                                </span>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span
+                                    class="legend-dot medium"
+                                ></span>
+
+                                <span>
+                                    Medium
+                                </span>
+
+                            </div>
+
+
+                            <div class="legend-row">
+
+                                <span
+                                    class="legend-dot low"
+                                ></span>
+
+                                <span>
+                                    Low
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Prototype label -->
+
+                        <div class="map-data-label">
+
+                            <span>
+                                GIS PROTOTYPE
+                            </span>
+
+                            <small>
+                                Project coordinates are
+                                demonstrative.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ==================================================
+                     MAP PROJECT PANEL
+                     ================================================== -->
+
+                <aside class="gis-project-panel card">
+
+
+                    <div class="gis-panel-header">
+
+                        <div>
+
+                            <p class="page-eyebrow">
+                                SELECTED LOCATION
+                            </p>
+
+                            <h2
+                                id="gisSelectedTitle"
+                            >
+                                Select a project
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        class="gis-no-selection"
+                        id="gisNoSelection"
+                    >
+
+                        <div class="selection-icon">
+                            ⌖
+                        </div>
+
+                        <h3>
+                            Explore project risk
+                        </h3>
+
+                        <p>
+                            Select a project marker on the map
+                            to view its predictive risk profile.
+                        </p>
+
+                    </div>
+
+
+
+                    <div
+                        class="gis-project-details hidden"
+                        id="gisProjectDetails"
+                    >
+
+
+                        <div class="gis-location">
+
+                            <span>
+                                LOCATION
+                            </span>
+
+                            <strong
+                                id="gisSelectedLocation"
+                            >
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="gis-risk-score-box">
+
+                            <div>
+
+                                <span>
+                                    DELAY PROBABILITY
+                                </span>
+
+                                <strong
+                                    id="gisSelectedRisk"
+                                >
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <span
+                                id="gisSelectedRiskBadge"
+                                class="status-badge"
+                            >
+                                —
+                            </span>
+
+                        </div>
+
+
+                        <div class="gis-detail-list">
+
+
+                            <div class="gis-detail-row">
+
+                                <span>
+                                    Acquisition Stage
+                                </span>
+
+                                <strong
+                                    id="gisSelectedStage"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="gis-detail-row">
+
+                                <span>
+                                    Project Progress
+                                </span>
+
+                                <strong
+                                    id="gisSelectedProgress"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="gis-detail-row">
+
+                                <span>
+                                    Predicted Delay
+                                </span>
+
+                                <strong
+                                    id="gisSelectedDelay"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="gis-detail-row">
+
+                                <span>
+                                    Primary Driver
+                                </span>
+
+                                <strong
+                                    id="gisSelectedDriver"
+                                >
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gis-action-area">
+
+                            <button
+                                class="btn btn-primary btn-full"
+                                id="gisViewRisk"
+                            >
+                                Open AI Risk Analysis →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 REGIONAL SUMMARY
+                 ================================================== -->
+
+            <section class="card regional-summary">
+
+
+                <div class="card-header">
+
+                    <div class="card-header-content">
+
+                        <h2 class="card-title">
+                            Regional Risk Summary
+                        </h2>
+
+                        <p class="card-subtitle">
+                            Geographic concentration of
+                            predicted acquisition risk
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="regional-grid"
+                    id="regionalGrid"
+                ></div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 GIS NOTE
+                 ================================================== -->
+
+            <div class="gis-disclaimer">
+
+                <span>
+                    ⓘ
+                </span>
+
+                <p>
+                    This prototype uses demonstrative project
+                    coordinates and simulated map visualization.
+                    Production deployment would connect this layer
+                    to authoritative GIS services and verified
+                    government project coordinates.
+                </p>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script src="../js/data.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+<script src="../js/gis.js"></script>
+
+</body>
+
+</html>

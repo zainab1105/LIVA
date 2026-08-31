@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Risk Intelligence | LandTrack AI</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/components.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/risk-analysis.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app-shell">
+
+
+    <!-- ======================================================
+         SIDEBAR
+         ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="brand-mark">
+                LT
+            </div>
+
+            <div class="brand-info">
+
+                <h1>
+                    LandTrack <span>AI</span>
+                </h1>
+
+                <p>
+                    Predictive Governance
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-navigation">
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Overview
+                </p>
+
+                <a
+                    href="dashboard.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⌂</span>
+                    <span>Command Center</span>
+                </a>
+
+                <a
+                    href="index.html#projects"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">▣</span>
+                    <span>Project Portfolio</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Intelligence
+                </p>
+
+                <a
+                    href="risk-analysis.html"
+                    class="navigation-item active"
+                >
+                    <span class="navigation-icon">◈</span>
+                    <span>AI Risk Intelligence</span>
+                </a>
+
+                <a
+                    href="gis-map.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⌖</span>
+                    <span>Predictive GIS</span>
+                </a>
+
+                <a
+                    href="analytics.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">◒</span>
+                    <span>Analytics</span>
+                </a>
+
+                <a
+                    href="recommendations.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">✦</span>
+                    <span>Action Center</span>
+                </a>
+
+                <a
+                    href="digital-twin.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">◇</span>
+                    <span>Delay Digital Twin</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Operations
+                </p>
+
+                <a
+                    href="alerts.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⚠</span>
+                    <span>Alerts</span>
+
+                    <span class="navigation-badge">
+                        07
+                    </span>
+
+                </a>
+
+                <a
+                    href="data-center.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⇧</span>
+                    <span>Data Center</span>
+                </a>
+
+                <a
+                    href="model-health.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⌁</span>
+                    <span>Model Health</span>
+                </a>
+
+            </div>
+
+
+            <div class="navigation-group">
+
+                <p class="navigation-label">
+                    Administration
+                </p>
+
+                <a
+                    href="administration.html"
+                    class="navigation-item"
+                >
+                    <span class="navigation-icon">⚙</span>
+                    <span>Access & Audit</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="system-status">
+
+                <span class="status-indicator"></span>
+
+                <div>
+
+                    <strong>
+                        System Operational
+                    </strong>
+
+                    <small>
+                        Prototype Environment
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-version">
+                SIH 2026 · SIH26017
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ======================================================
+         MAIN
+         ====================================================== -->
+
+    <div class="main-container">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <button
+                    class="menu-button"
+                    id="menuButton"
+                >
+                    ☰
+                </button>
+
+                <div class="breadcrumb">
+
+                    <span>
+                        LAND ACQUISITION INTELLIGENCE
+                    </span>
+
+                    <strong>/</strong>
+
+                    <span>
+                        AI RISK INTELLIGENCE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="header-status">
+
+                    <span class="status-indicator"></span>
+
+                    Model Online
+
+                </div>
+
+
+                <button
+                    class="header-icon-button"
+                    id="notificationButton"
+                >
+                    ♢
+
+                    <span class="notification-count">
+                        7
+                    </span>
+
+                </button>
+
+
+                <div class="user-profile">
+
+                    <div class="user-avatar">
+                        ZA
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong>
+                            Project Officer
+                        </strong>
+
+                        <small>
+                            Government Account
+                        </small>
+
+                    </div>
+
+                    <span class="user-chevron">
+                        ▾
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             PAGE CONTENT
+             ================================================== -->
+
+        <main class="page-content">
+
+
+            <!-- INTRO -->
+
+            <section class="page-intro">
+
+                <div class="page-intro-text">
+
+                    <p class="page-eyebrow">
+                        ARTIFICIAL INTELLIGENCE
+                    </p>
+
+                    <h1 class="page-title">
+                        AI Risk Intelligence
+                    </h1>
+
+                    <p class="page-description">
+                        Predict the probability of land acquisition
+                        delays and understand the factors driving
+                        each prediction.
+                    </p>
+
+                </div>
+
+
+                <div class="risk-project-selector">
+
+                    <label>
+                        Analyse Project
+                    </label>
+
+                    <select
+                        id="riskProjectSelect"
+                        class="select-field"
+                    >
+
+                    </select>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 PROJECT SUMMARY
+                 ================================================== -->
+
+            <section class="risk-project-banner card">
+
+                <div class="risk-project-main">
+
+                    <div class="project-emblem">
+                        AI
+                    </div>
+
+                    <div>
+
+                        <p class="risk-project-label">
+                            SELECTED PROJECT
+                        </p>
+
+                        <h2
+                            id="selectedProjectName"
+                            class="risk-project-name"
+                        >
+                            Delhi–Mumbai Expressway
+                        </h2>
+
+                        <p
+                            id="selectedProjectMeta"
+                            class="risk-project-meta"
+                        >
+                            Rajasthan · Dausa · Highway · NHAI
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="risk-project-status">
+
+                    <span class="status-badge status-critical">
+                        ● Critical Risk
+                    </span>
+
+                    <span
+                        id="riskLastUpdated"
+                        class="risk-updated"
+                    >
+                        Updated today
+                    </span>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 RISK OVERVIEW
+                 ================================================== -->
+
+            <section class="risk-overview-grid">
+
+
+                <!-- SCORE -->
+
+                <article class="risk-score-card card">
+
+                    <div class="risk-card-heading">
+
+                        <div>
+
+                            <h3>
+                                Overall Delay Risk
+                            </h3>
+
+                            <p>
+                                AI-generated probability
+                            </p>
+
+                        </div>
+
+                        <span class="ai-chip">
+                            AI MODEL
+                        </span>
+
+                    </div>
+
+
+                    <div class="risk-score-visual">
+
+                        <div
+                            class="risk-score-circle"
+                            id="riskScoreCircle"
+                        >
+
+                            <div>
+
+                                <strong
+                                    id="riskScoreValue"
+                                >
+                                    87%
+                                </strong>
+
+                                <span>
+                                    delay probability
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="risk-score-footer">
+
+                        <span>
+                            Risk classification
+                        </span>
+
+                        <strong
+                            id="riskClassification"
+                            class="critical-text"
+                        >
+                            CRITICAL
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PREDICTION -->
+
+                <article class="prediction-card card">
+
+                    <div class="risk-card-heading">
+
+                        <div>
+
+                            <h3>
+                                Delay Forecast
+                            </h3>
+
+                            <p>
+                                Expected impact on timeline
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="prediction-main">
+
+                        <div>
+
+                            <span class="prediction-label">
+                                Predicted additional delay
+                            </span>
+
+                            <strong
+                                id="predictedDelay"
+                            >
+                                146 days
+                            </strong>
+
+                        </div>
+
+                        <span class="prediction-arrow">
+                            →
+                        </span>
+
+                    </div>
+
+
+                    <div class="prediction-timeline">
+
+                        <div class="timeline-line">
+
+                            <span class="timeline-dot start"></span>
+
+                            <span class="timeline-progress"></span>
+
+                            <span class="timeline-dot end"></span>
+
+                        </div>
+
+                        <div class="timeline-labels">
+
+                            <span>
+                                Current estimate
+                            </span>
+
+                            <span>
+                                AI forecast
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-panel">
+
+                        <div class="insight-icon">
+                            ✦
+                        </div>
+
+                        <div class="insight-content">
+
+                            <p class="insight-title">
+                                Model assessment
+                            </p>
+
+                            <p
+                                class="insight-text"
+                                id="modelAssessment"
+                            >
+                                Compensation delays and unresolved
+                                legal disputes are the strongest
+                                contributors to the predicted delay.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 EXPLAINABLE AI
+                 ================================================== -->
+
+            <section class="explainability-grid">
+
+
+                <!-- CONTRIBUTING FACTORS -->
+
+                <article class="card contributing-card">
+
+                    <div class="card-header">
+
+                        <div class="card-header-content">
+
+                            <h2 class="card-title">
+                                Key Contributing Factors
+                            </h2>
+
+                            <p class="card-subtitle">
+                                Factors influencing this prediction
+                            </p>
+
+                        </div>
+
+                        <span class="ai-chip">
+                            EXPLAINABLE AI
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="factor-list"
+                        id="factorList"
+                    >
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- STAGE RISK -->
+
+                <article class="card stage-analysis-card">
+
+                    <div class="card-header">
+
+                        <div class="card-header-content">
+
+                            <h2 class="card-title">
+                                Lifecycle Stage Risk
+                            </h2>
+
+                            <p class="card-subtitle">
+                                Predicted delay probability by stage
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="project-stage-risk"
+                        id="projectStageRisk"
+                    >
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 AI RECOMMENDATION
+                 ================================================== -->
+
+            <section class="ai-recommendation card">
+
+                <div class="recommendation-icon">
+                    ✦
+                </div>
+
+
+                <div class="recommendation-content">
+
+                    <p class="recommendation-label">
+                        AI-POWERED MITIGATION RECOMMENDATION
+                    </p>
+
+                    <h3
+                        id="aiRecommendationTitle"
+                    >
+                        Immediate intervention recommended
+                    </h3>
+
+                    <p
+                        id="aiRecommendationText"
+                    >
+                        Prioritize compensation disbursement,
+                        resolve pending ownership disputes and
+                        establish a time-bound legal resolution
+                        workflow for affected parcels.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary"
+                    id="viewActionButton"
+                >
+                    View Action Plan →
+                </button>
+
+            </section>
+
+
+
+            <!-- ==================================================
+                 MODEL INFORMATION
+                 ================================================== -->
+
+            <section class="model-info-grid">
+
+
+                <div class="model-info-item">
+
+                    <span>
+                        MODEL VERSION
+                    </span>
+
+                    <strong>
+                        LT-Predict v1.0
+                    </strong>
+
+                </div>
+
+
+                <div class="model-info-item">
+
+                    <span>
+                        MODEL CONFIDENCE
+                    </span>
+
+                    <strong>
+                        91.2%
+                    </strong>
+
+                </div>
+
+
+                <div class="model-info-item">
+
+                    <span>
+                        TRAINING RECORDS
+                    </span>
+
+                    <strong>
+                        12,840
+                    </strong>
+
+                </div>
+
+
+                <div class="model-info-item">
+
+                    <span>
+                        LAST RETRAINED
+                    </span>
+
+                    <strong>
+                        24 Aug 2026
+                    </strong>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<script src="../js/data.js"></script>
+
+<script src="../js/app.js"></script>
+
+<script src="../js/risk-analysis.js"></script>
+
+</body>
+
+</html> 
