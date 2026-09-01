@@ -3825,7 +3825,7 @@ body.modal-open {
 .action-due span {
     color: var(--muted);
 
-    font-size: 7px;
+    font-size: 15px;
 
     font-weight: 800;
 
@@ -5063,7 +5063,7 @@ body {
 }
 
 .action-metrics span {
-    font-size: 9px;
+    font-size: 12px;
 }
 
 .action-metrics strong {
@@ -5107,7 +5107,7 @@ body {
 
 .action-owner strong,
 .action-due strong {
-    font-size: 9px;
+    font-size: 14px;
 }
 
 .action-detail-panel {

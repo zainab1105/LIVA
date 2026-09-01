@@ -401,7 +401,7 @@
     border: 1px dashed var(--line);
     border-radius: 10px;
     color: var(--muted);
-    font-size: 10px;
+    font-size: 15px;
     line-height: 1.5;
 }
 
@@ -566,7 +566,7 @@
 
 .document-list-heading span {
     color: var(--gold);
-    font-size: 9px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 1.3px;
 }
@@ -579,7 +579,7 @@
 
 .document-list-heading > span:last-child {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 15px;
 }
 
 .document-list {
@@ -639,7 +639,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 17px;
 }
 
 .document-main small {
@@ -649,7 +649,7 @@
 }
 
 .document-status {
-    font-size: 9px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -766,7 +766,7 @@
 .inspector-status-box span {
     display: block;
     color: var(--muted);
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -774,7 +774,7 @@
 .inspector-status-box strong {
     display: block;
     margin-top: 4px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .inspector-details {
@@ -794,12 +794,12 @@
 
 .inspector-details span {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .inspector-details strong {
     max-width: 170px;
-    font-size: 10px;
+    font-size: 14px;
     text-align: right;
 }
 
@@ -809,7 +809,7 @@
 
 .inspector-analysis span {
     color: var(--gold);
-    font-size: 8px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 1px;
 }

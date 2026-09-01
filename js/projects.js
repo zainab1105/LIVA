@@ -609,15 +609,6 @@ function updateFilterVisual(
    11. SUMMARY
    ============================================================ */
 
-function setDetail(id, value) {
-    const element = document.getElementById(id);
-
-    if (element) {
-        element.textContent = value ?? "Not available";
-    }
-}
-
-
 function renderProjectSummary(project) {
     // your existing code
 }
@@ -1200,6 +1191,17 @@ function openProjectModal() {
     );
 
 
+    modal.classList.add(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
     document.body.style.overflow =
         "hidden";
 
@@ -1213,14 +1215,17 @@ function openProjectModal() {
     if (firstInput) {
 
         setTimeout(
-            () => firstInput.focus(),
+            () => {
+
+                firstInput.focus();
+
+            },
             100
         );
 
     }
 
 }
-
 
 /* ============================================================
    17. CLOSE MODAL
@@ -1239,30 +1244,63 @@ function closeProjectModal() {
     }
 
 
+    /*
+        Remove focus from anything
+        inside the modal first.
+    */
+
+    if (
+        modal.contains(
+            document.activeElement
+        )
+    ) {
+
+        document.activeElement.blur();
+
+    }
+
+
+    /*
+        Hide the modal.
+    */
+
     modal.classList.add(
         "hidden"
     );
 
 
+    modal.classList.remove(
+        "active"
+    );
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    /*
+        Restore page scrolling.
+    */
+
     document.body.style.overflow =
         "";
 
 
-    const form =
+    /*
+        Return focus to Add New Project button.
+    */
+
+    const addProjectButton =
         document.getElementById(
-            "addProjectForm"
+            "addProjectButton"
         );
 
 
-    if (form) {
-
-        form.reset();
-
-    }
+    addProjectButton?.focus();
 
 }
-
-
 /* ============================================================
    18. ADD PROJECT FORM
    ============================================================ */
@@ -1475,33 +1513,23 @@ function handleAddProject(
 
 
     /*
-        Update everything immediately.
+        Update dashboard after adding project
     */
 
     populateNewFilterValues();
 
-    applyFilters();
-
-    function setDetail(id, value) {
-        const element = document.getElementById(id);
-
-        if (element) {
-            element.textContent =
-                value ?? "Not available";
-        }
-    }
 
     renderProjectSummary();
 
-    closeProjectModal();
+        closeProjectModal();
 
 
-    showToast(
-        `${name} added to the project portfolio.`,
-        "success"
-    );
+        showToast(
+            `${name} added to the project portfolio.`,
+            "success"
+        );
 
-}
+    }
 
 
 /* ============================================================

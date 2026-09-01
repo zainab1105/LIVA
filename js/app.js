@@ -81,105 +81,206 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    /* ========================================================
-       VIEW NAVIGATION
-       ======================================================== */
+   /* ========================================================
+   VIEW NAVIGATION
+   ======================================================== */
 
-    function switchView(
-        viewName
-    ) {
+function switchView(
+    viewName,
+    updateHistory = true
+) {
 
-        if (!viewName) {
-            return;
-        }
-
-
-        activeView =
-            viewName;
-
-
-        views.forEach(
-            view => {
-
-                const isActive =
-                    view.id ===
-                    `${viewName}View`;
-
-
-                view.classList.toggle(
-                    "active",
-                    isActive
-                );
-
-            }
-        );
-
-
-        navigationItems.forEach(
-            item => {
-
-                item.classList.toggle(
-                    "active",
-                    item.dataset.view ===
-                    viewName
-                );
-
-            }
-        );
-
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-
-        document.dispatchEvent(
-            new CustomEvent(
-                "landtrack:viewchanged",
-                {
-                    detail: {
-                        view:
-                            viewName
-                    }
-                }
-            )
-        );
-
+    if (!viewName) {
+        return;
     }
 
 
-    navigationItems.forEach(
-        item => {
+    activeView =
+        viewName;
 
-            item.addEventListener(
-                "click",
-                () => {
 
-                    switchView(
-                        item.dataset.view
-                    );
+    views.forEach(
+        view => {
 
-                }
+            const isActive =
+                view.id ===
+                `${viewName}View`;
+
+
+            view.classList.toggle(
+                "active",
+                isActive
             );
 
         }
     );
 
 
-    viewTargetButtons.forEach(
-        button => {
+    navigationItems.forEach(
+        item => {
 
-            button.addEventListener(
-                "click",
-                () => {
+            item.classList.toggle(
+                "active",
+                item.dataset.view ===
+                viewName
+            );
 
-                    switchView(
-                        button.dataset
-                            .viewTarget
-                    );
+        }
+    );
 
+
+    localStorage.setItem(
+        "activeView",
+        viewName
+    );
+
+
+    if (updateHistory) {
+
+        history.pushState(
+            {
+                view: viewName
+            },
+            "",
+            `#${viewName}`
+        );
+
+    }
+
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+
+    document.dispatchEvent(
+        new CustomEvent(
+            "landtrack:viewchanged",
+            {
+                detail: {
+                    view: viewName
                 }
+            }
+        )
+    );
+
+}
+
+
+/* ========================================================
+   NAVIGATION BUTTONS
+   ======================================================== */
+
+navigationItems.forEach(
+    item => {
+
+        item.addEventListener(
+            "click",
+            () => {
+
+                switchView(
+                    item.dataset.view
+                );
+
+            }
+        );
+
+    }
+);
+
+
+viewTargetButtons.forEach(
+    button => {
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                switchView(
+                    button.dataset.viewTarget
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* ========================================================
+   RESTORE LAST OPEN VIEW
+   ======================================================== */
+
+const savedView =
+    localStorage.getItem(
+        "activeView"
+    );
+
+
+const hashView =
+    window.location.hash
+        .replace(
+            "#",
+            ""
+        );
+
+
+const initialView =
+    hashView ||
+    savedView ||
+    "overview";
+
+
+switchView(
+    initialView,
+    false
+);
+
+
+/* ========================================================
+   BROWSER BACK / FORWARD
+   ======================================================== */
+
+window.addEventListener(
+    "popstate",
+    event => {
+
+        const viewName =
+            event.state?.view ||
+            window.location.hash
+                .replace(
+                    "#",
+                    ""
+                ) ||
+            "overview";
+
+
+        switchView(
+            viewName,
+            false
+        );
+
+    }
+);
+
+    /* ========================================================
+                BROWSER BACK / FORWARD NAVIGATION
+    ======================================================== */
+
+    window.addEventListener(
+        "popstate",
+        () => {
+
+            const viewName =
+                window.location.hash
+                    .replace("#", "") ||
+                "overview";
+
+
+            switchView(
+                viewName,
+                false
             );
 
         }
@@ -889,34 +990,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ?.focus();
 
     }
-
-
-    function closeProjectModal() {
-
-        if (!projectModal) {
-            return;
-        }
-
-
-        projectModal
-            .classList.remove(
-                "open"
-            );
-
-
-        projectModal
-            .setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-
-        document.body.classList.remove(
-            "modal-open"
-        );
-
-    }
-
 
     document
         .getElementById(
@@ -1943,9 +2016,9 @@ document.addEventListener("DOMContentLoaded", () => {
        TOAST
        ======================================================== */
 
-    function showToast(
+    window.showToast = function (
         message
-    ) {
+    ){
 
         const existing =
             document.querySelector(
@@ -2003,7 +2076,7 @@ document.addEventListener("DOMContentLoaded", () => {
             3000
         );
 
-    }
+    };
 
 
 
@@ -2106,10 +2179,6 @@ document.addEventListener("DOMContentLoaded", () => {
        ======================================================== */
 
     refreshDashboard();
-
-    switchView(
-        "overview"
-    );
 
 });
 

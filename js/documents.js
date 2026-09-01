@@ -882,7 +882,7 @@ document.addEventListener("DOMContentLoaded", () => {
        ======================================================== */
 
     function inspectDocument(
-        document,
+        documentData,
         result
     ) {
 
@@ -978,7 +978,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             <h2>
-                ${document.name}
+                ${documentData.name}
             </h2>
 
 
