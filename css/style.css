@@ -983,7 +983,7 @@ h3 {
 
 .india-map-image {
     width: 100%;
-    height: 100%;
+    height: 145%;
 
     object-fit: contain;
     object-position: center;
@@ -7131,7 +7131,7 @@ button,
 
     color: var(--muted);
 
-    font-size: 9px;
+    font-size: 12px;
 
     font-weight: 800;
 
@@ -7142,7 +7142,7 @@ button,
 .prediction-selector select {
     width: 100%;
 
-    padding: 14px 16px;
+    padding: 10px 16px;
 
     background: var(--paper);
 

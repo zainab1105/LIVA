@@ -960,16 +960,30 @@ function createProjectRow(
     `;
 
 
-    const viewButton =
+        const viewButton =
         row.querySelector(
             ".project-action-button"
         );
 
 
-    viewButton.addEventListener("click", () => {
-    const projectId = viewButton.dataset.projectId;
-    openProjectDrawer(projectId);
-});
+    viewButton.addEventListener(
+        "click",
+        () => {
+
+            const projectId =
+                viewButton.dataset.projectId;
+
+            openProjectDrawer(
+                projectId
+            );
+
+        }
+    );
+
+
+    return row;
+
+}
 
 
 /* ============================================================
@@ -2034,4 +2048,4 @@ function setDetail(id, value) {
         element.textContent =
             value ?? "Not available";
     }
-}}
+}

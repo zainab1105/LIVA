@@ -898,28 +898,28 @@
 
         <section class="view" id="gisView">
 
-    <div class="gis-page">
+        <div class="gis-page">
 
-        <div class="gis-header">
-            <div>
-                <span class="page-eyebrow">
-                    02 · GEOSPATIAL INTELLIGENCE
-                </span>
+            <div class="gis-header">
+                <div>
+                    <span class="page-eyebrow">
+                        02 · GEOSPATIAL INTELLIGENCE
+                    </span>
 
-                <h1>Land Map</h1>
+                    <h1>Land Map</h1>
 
-                <p>
-                    India-wide project and parcel intelligence,
-                    with live acquisition risk signals.
-                </p>
+                    <p>
+                        India-wide project and parcel intelligence,
+                        with live acquisition risk signals.
+                    </p>
+                </div>
+
+                <div class="gis-filters">
+                    <button class="gis-filter active">All Projects</button>
+                    <button class="gis-filter">High Risk</button>
+                    <button class="gis-filter">Acquisition</button>
+                </div>
             </div>
-
-            <div class="gis-filters">
-                <button class="gis-filter active">All Projects</button>
-                <button class="gis-filter">High Risk</button>
-                <button class="gis-filter">Acquisition</button>
-            </div>
-        </div>
 
         <div class="gis-layout">
 
@@ -930,15 +930,19 @@
                     <strong>Project risk landscape</strong>
                 </div>
 
-                <div id="indiaMap"></div>
+                <div class="india-map-placeholder">
 
-                <div class="map-legend">
-                    <span><i class="low"></i> Low</span>
-                    <span><i class="medium"></i> Medium</span>
-                    <span><i class="high"></i> High</span>
-                    <span><i class="critical"></i> Critical</span>
+                    <img
+                        src="../assets/images/india-map.png"
+                        class="india-map-image"
+                        alt="India project risk map">
+                    <div class="risk-spot critical spot-mumbai"></div>
+                    <div class="risk-spot high spot-delhi"></div>
+                    <div class="risk-spot medium spot-lucknow"></div>
+                    <div class="risk-spot low spot-bengaluru"></div>
+                    <div class="risk-spot critical spot-pune"></div>
                 </div>
-
+                
             </div>
 
 
@@ -1015,10 +1019,6 @@
                     risks and prioritize projects requiring intervention.
                 </p>
             </div>
-
-            <button class="add-project-btn">
-                + Add New Project
-            </button>
 
         </div>
 
