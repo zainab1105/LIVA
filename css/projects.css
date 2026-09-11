@@ -467,8 +467,7 @@
 
 .project-name {
     color: var(--text);
-
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 750;
 }
 
@@ -491,8 +490,7 @@
 
 .project-state {
     color: var(--text-secondary);
-
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -510,7 +508,7 @@
 .project-stage {
     color: var(--text-secondary);
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 650;
 
     white-space: nowrap;
@@ -1204,7 +1202,8 @@
     overflow: hidden;
     background: #fff;
     border: 1px solid var(--border);
-    border-radius: var(--radius-md);
+    border-radius: 1%;
+    margin-left: -40px;
 }
 
 .project-table-card .card-header {
@@ -1245,6 +1244,7 @@
 .table-wrap {
     width: 100%;
     overflow-x: auto;
+    padding: 9px;
 }
 
 .data-table {
@@ -1258,13 +1258,13 @@
     text-align: left;
     border-bottom: 1px solid var(--border);
     color: var(--text-muted);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 800;
     letter-spacing: 0.8px;
 }
 
 .data-table td {
-    padding: 18px 20px;
+    padding: 18px 12.5px;
     border-bottom: 1px solid #edf0ef;
     color: var(--text-secondary);
     font-size: 12px;

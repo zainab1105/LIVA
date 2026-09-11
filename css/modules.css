@@ -901,7 +901,7 @@
 
 .drawer-eyebrow {
     color: var(--gold);
-    font-size: 19px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 1.5px;
 }
@@ -1579,7 +1579,7 @@
 
 .gis-page {
     width: min(100% - 72px, 1800px);
-    margin: 0 auto;
+    margin: -55px 0px;
     padding: 48px 0 90px;
 }
 
@@ -1592,7 +1592,7 @@
 
 .gis-header h1 {
     margin: 10px 0 12px;
-    font-size: 52px;
+    font-size: 27px;
     font-family: "Manrope", sans-serif;
 }
 
@@ -1650,8 +1650,8 @@
 
 .map-overlay-title {
     position: absolute;
-    top: 11px;
-    left: 52px;
+    top: 6px;
+    left: 6px;
     z-index: 500;
     background: rgba(18, 49, 45, 0.92);
     padding: 10px 14px;
