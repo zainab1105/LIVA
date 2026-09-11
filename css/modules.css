@@ -28,7 +28,7 @@
 
 .simulator-header h1 {
     font-family: "Manrope", sans-serif;
-    font-size: clamp(42px, 5vw, 68px);
+    font-size: 37px;
     line-height: 1;
     letter-spacing: -3px;
 }
@@ -42,6 +42,8 @@
 }
 
 .prototype-badge {
+    margin-bottom: -70px;
+    margin-right: 20px;
     padding: 9px 12px;
     border: 1px solid var(--gold);
     border-radius: 8px;
@@ -95,6 +97,7 @@
     display: grid;
     grid-template-columns: 0.9fr 1.35fr 0.95fr;
     gap: 16px;
+    margin-right: 16px;
 }
 
 .simulation-panel {
@@ -219,12 +222,12 @@
 }
 
 .intervention-copy strong {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .intervention-copy span {
     color: var(--muted);
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1.4;
 }
 
@@ -311,7 +314,7 @@
 .result-change span {
     display: block;
     color: var(--muted);
-    font-size: 9px;
+    font-size: 13px;
 }
 
 .result-change strong {
@@ -338,7 +341,7 @@
 
 .outcome-comparison span {
     color: var(--muted);
-    font-size: 8px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -361,7 +364,7 @@
 
 .simulation-verdict span {
     color: var(--gold);
-    font-size: 8px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 1.2px;
 }
@@ -436,13 +439,13 @@
 
 .documents-header h1 {
     font-family: "Manrope", sans-serif;
-    font-size: clamp(42px, 5vw, 68px);
+    font-size: 37px;
     line-height: 1;
     letter-spacing: -3px;
 }
 
 .documents-description {
-    max-width: 650px;
+    max-width: 800px;
     margin-top: 18px;
     color: var(--muted);
     font-size: 16px;
@@ -457,6 +460,7 @@
     color: white;
     font-size: 11px;
     font-weight: 700;
+    margin-bottom: -81px;
 }
 
 .document-upload-button:hover {
@@ -936,7 +940,7 @@
 .drawer-risk span {
     display: block;
     color: var(--muted);
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 800;
     letter-spacing: 1px;
 }
@@ -945,7 +949,7 @@
     display: block;
     margin-top: 4px;
     font-family: "Manrope", sans-serif;
-    font-size: 25px;
+    font-size: 17px;
 }
 
 .drawer-risk.critical strong {
@@ -967,7 +971,7 @@
 .drawer-section-title {
     margin-bottom: 13px;
     color: var(--gold);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 1.4px;
 }

@@ -2224,8 +2224,7 @@ body.modal-open {
 .prediction-header h1 {
     margin-top: 12px;
 
-    font-size:
-        clamp(42px, 5vw, 68px);
+    font-size: 40px ;
 
     line-height: 1;
 
@@ -2349,7 +2348,7 @@ body.modal-open {
 .prediction-driver-card {
     min-height: 225px;
 
-    padding: 25px;
+    padding: 22px;
 
     background: white;
 
@@ -3503,6 +3502,7 @@ body.modal-open {
     flex-direction: column;
 
     padding-bottom: 5px;
+    margin-right: 38px;
 }
 
 
@@ -5930,9 +5930,7 @@ body {
 
 
 .prediction-score-card span {
-
-    color:
-        #BFCBC5;
+    color: brown;
 
 }
 
@@ -7111,7 +7109,7 @@ button,
 .prediction-header h1 {
     max-width: 850px;
 
-    font-size: clamp(42px, 4vw, 68px);
+    font-size: 37px;
 
     line-height: 1.05;
 
@@ -7122,7 +7120,7 @@ button,
 
 
 .prediction-description {
-    max-width: 650px;
+    max-width: 800px;
 
     margin-top: 20px;
 
@@ -7178,6 +7176,7 @@ button,
    ============================================================ */
 
 .prediction-selector {
+    margin-top: -22px;
     margin-bottom: 28px;
 
     padding: 22px 25px;
@@ -7236,7 +7235,7 @@ button,
     display: grid;
 
     grid-template-columns:
-        1.4fr
+        1.2fr
         1fr
         1fr;
 
@@ -7251,7 +7250,7 @@ button,
 .prediction-driver-card {
     min-height: 260px;
 
-    padding: 30px;
+    padding: 22px;
 
     border-radius: 20px;
 
@@ -7288,7 +7287,7 @@ button,
 .prediction-score-heading > span:first-child {
     color: var(--muted);
 
-    font-size: 10px;
+    font-size: 15px;
 
     font-weight: 800;
 
@@ -7344,7 +7343,7 @@ button,
 
 
 .prediction-score strong {
-    font-size: clamp(70px, 7vw, 105px);
+    font-size: 55px;
 
     line-height: 0.8;
 
@@ -7410,11 +7409,11 @@ button,
     display: flex;
     justify-content: space-between;
 
-    margin-top: 18px;
+    margin-top: 9px;
 
     color: var(--muted);
 
-    font-size: 11px;
+    font-size: 17px;
 }
 
 
@@ -7431,7 +7430,7 @@ button,
 .prediction-driver-card > span {
     color: var(--muted);
 
-    font-size: 9px;
+    font-size: 14px;
 
     font-weight: 800;
 
@@ -7529,7 +7528,7 @@ button,
 .prediction-panel-heading span {
     color: var(--gold);
 
-    font-size: 9px;
+    font-size: 13px;
 
     font-weight: 800;
 
@@ -7692,7 +7691,7 @@ button,
    ============================================================ */
 
 .prediction-interpretation {
-    padding: 45px;
+    padding: 32px;
 
     margin-bottom: 25px;
 
@@ -7717,7 +7716,7 @@ button,
 .interpretation-label span {
     color: var(--gold);
 
-    font-size: 10px;
+    font-size: 15px;
 
     font-weight: 800;
 
@@ -7738,7 +7737,7 @@ button,
 .interpretation-content h2 {
     max-width: 950px;
 
-    font-size: clamp(25px, 3vw, 42px);
+    font-size: 25px;
 
     line-height: 1.25;
 
@@ -7926,7 +7925,7 @@ button,
 ========================================================= */
 
 :root {
-    --bottom-bar-height: 70px;
+    --bottom-bar-height: 55px;
 }
 
 .workspace {

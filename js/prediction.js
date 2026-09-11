@@ -122,9 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </p>
 
                             <h1>
-                                Don't just see the risk.
-                                <br>
-                                Understand it.
+                                Don't just see the risk. Understand it.
                             </h1>
 
                             <p class="prediction-description">

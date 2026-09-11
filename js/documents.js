@@ -281,9 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             </p>
 
                             <h1>
-                                Know what the file
-                                <br>
-                                is still missing.
+                                Know what the file is still missing.
                             </h1>
 
                             <p class="documents-description">
